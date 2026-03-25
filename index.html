@@ -32,12 +32,8 @@
                     <h3 id="bio-title">Über meine Arbeit</h3>
                 </div>
                 <div class="bio-content">
-                    <p id="bio-p1">
-                        Ich bin Snufi – Entwickler aus Leidenschaft mit einem tiefen Verständnis für die Architektur moderner Software. Mein Fokus liegt nicht nur auf dem Schreiben von Code, sondern auf der Lösung komplexer Probleme durch effiziente, sichere und performante Algorithmen.
-                    </p>
-                    <p id="bio-p2">
-                        Egal ob du eine robuste Backend-Struktur in Java oder C# benötigst, dynamische Web-Applikationen realisieren willst oder spezialisierte Automatisierungen in Python und Lua suchst: Ich lege höchsten Wert auf Clean Code und technische Präzision.
-                    </p>
+                    <p id="bio-p1">Ich bin Snufi – Entwickler aus Leidenschaft mit einem tiefen Verständnis für die Architektur moderner Software. Mein Fokus liegt nicht nur auf dem Schreiben von Code, sondern auf der Lösung komplexer Probleme durch effiziente, sichere und performante Algorithmen.</p>
+                    <p id="bio-p2">Egal ob du eine robuste Backend-Struktur in Java oder C# benötigst, dynamische Web-Applikationen realisieren willst oder spezialisierte Automatisierungen in Python und Lua suchst: Ich lege höchsten Wert auf Clean Code und technische Präzision.</p>
                 </div>
             </section>
 
@@ -62,23 +58,17 @@
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" id="form-text" placeholder="Beschreibe dein Projekt..." rows="5" required></textarea>
-                    
                     <input type="hidden" name="_captcha" value="false">
-                    <button type="submit" id="submit-btn">
-                        Anfrage absenden <i class="fas fa-paper-plane"></i>
-                    </button>
+                    <button type="submit" id="submit-btn">Anfrage absenden <i class="fas fa-paper-plane"></i></button>
                 </form>
             </section>
 
             <section class="glass-card fade-in delay-3">
                 <h3 id="agb-title">Rechtliche Bestimmungen</h3>
-                <div class="agb-box">
-                    <div id="agb-content">
-                        <h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p>
-                        <h4>§2 Auftragserteilung</h4><p>Angebote sind freibleibend. Ein Vertrag kommt erst durch Bestätigung per E-Mail zustande.</p>
-                        <h4>§3 Leistung</h4><p>Nachträgliche Änderungen können zu Zusatzkosten führen.</p>
-                        <h4>§4 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>
-                    </div>
+                <div class="agb-box" id="agb-content">
+                    <h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p>
+                    <h4>§2 Auftragserteilung</h4><p>Ein Vertrag kommt erst durch Bestätigung per E-Mail zustande.</p>
+                    <h4>§3 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>
                 </div>
             </section>
         </main>
@@ -89,7 +79,6 @@
     </div>
 
     <script>
-        // Datenbank für Sprachen
         const texts = {
             de: {
                 bioTitle: "Über meine Arbeit",
@@ -100,7 +89,7 @@
                 formPlace: "Beschreibe dein Projekt...",
                 submit: "Anfrage absenden",
                 agbTitle: "Rechtliche Bestimmungen",
-                agb: "<h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p><h4>§2 Auftragserteilung</h4><p>Angebote sind freibleibend. Ein Vertrag kommt erst durch Bestätigung per E-Mail zustande.</p><h4>§3 Leistung</h4><p>Nachträgliche Änderungen können zu Zusatzkosten führen.</p><h4>§4 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>"
+                agb: "<h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p><h4>§2 Auftragserteilung</h4><p>Ein Vertrag kommt erst durch Bestätigung per E-Mail zustande.</p><h4>§3 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>"
             },
             en: {
                 bioTitle: "About my Work",
@@ -111,7 +100,7 @@
                 formPlace: "Describe your project...",
                 submit: "Submit Request",
                 agbTitle: "Legal Terms",
-                agb: "<h4>§1 Scope</h4><p>These terms apply to all services by Snufi Coding.</p><h4>§2 Ordering</h4><p>Offers are non-binding. A contract is only formed upon confirmation via email.</p><h4>§3 Service</h4><p>Subsequent changes may result in additional costs.</p><h4>§4 Liability</h4><p>The developer is not liable for any damages arising from the use of the provided code.</p>"
+                agb: "<h4>§1 Scope</h4><p>These terms apply to all services by Snufi Coding.</p><h4>§2 Ordering</h4><p>A contract is only formed upon confirmation via email.</p><h4>§3 Liability</h4><p>The developer is not liable for any damages arising from the use of the provided code.</p>"
             }
         };
 
@@ -125,12 +114,10 @@
             document.getElementById('submit-btn').innerHTML = texts[lang].submit + ' <i class="fas fa-paper-plane"></i>';
             document.getElementById('agb-title').innerText = texts[lang].agbTitle;
             document.getElementById('agb-content').innerHTML = texts[lang].agb;
-
             document.getElementById('btn-de').classList.toggle('active', lang === 'de');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         }
 
-        // CURSOR LOGIC (Bleibt gleich)
         const cursorDot = document.querySelector(".cursor-dot");
         const cursorOutline = document.querySelector(".cursor-outline");
         window.addEventListener("mousemove", (e) => {

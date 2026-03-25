@@ -4,11 +4,11 @@
     --primary: #00f2ff;
     --secondary: #7000ff;
     --bg: #05070a;
-    --card: rgba(15, 20, 30, 0.7);
+    --card: rgba(15, 20, 30, 0.8);
     --text: #ffffff;
 }
 
-* { cursor: none; }
+* { cursor: none; box-sizing: border-box; }
 
 body {
     background-color: var(--bg);
@@ -30,11 +30,10 @@ body {
     border-radius: 50%; z-index: 9999; pointer-events: none;
 }
 
-/* --- LANGUAGE --- */
+/* --- UI ELEMENTS --- */
 .lang-switch {
     position: fixed; top: 20px; right: 20px; z-index: 1000;
     display: flex; gap: 5px; background: var(--card); padding: 5px; border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.05);
 }
 .lang-switch button {
     background: transparent; border: none; color: #666; padding: 6px 15px;
@@ -42,19 +41,19 @@ body {
 }
 .lang-switch button.active { background: var(--primary); color: var(--bg); }
 
-/* --- BIO & CARDS --- */
-.container { max-width: 850px; margin: 0 auto; padding: 80px 20px; }
+/* --- CONTENT --- */
+.container { max-width: 850px; margin: 0 auto; padding: 80px 20px; position: relative; z-index: 10; }
+
 .glass-card {
     background: var(--card); backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.05); border-radius: 24px;
-    padding: 40px; margin-bottom: 30px;
-    transition: 0.4s ease;
+    padding: 40px; margin-bottom: 30px; transition: 0.4s ease;
 }
 .glass-card:hover { border-color: var(--primary); transform: translateY(-3px); }
 
-.bio-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; color: var(--primary); }
-.bio-header i { font-size: 1.8rem; }
-.bio-content p { font-size: 1.1rem; line-height: 1.8; color: #ccd6f6; margin-bottom: 20px; }
+.logo { font-size: 3.5rem; font-weight: 800; text-align: center; color: var(--primary); margin-bottom: 10px; }
+.logo span { color: white; }
+.subtitle { text-align: center; opacity: 0.6; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 50px; }
 
 /* --- SKILLS --- */
 .skills-grid {
@@ -64,23 +63,16 @@ body {
 .skill-item {
     background: rgba(255,255,255,0.03); padding: 15px; text-align: center;
     border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);
-    font-weight: 500; transition: 0.3s; font-size: 0.95rem;
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    transition: 0.3s; display: flex; flex-direction: column; align-items: center; gap: 8px;
 }
 .skill-item i { font-size: 1.5rem; color: var(--primary); }
-.skill-item:hover {
-    background: var(--primary); color: var(--bg); box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
-}
+.skill-item:hover { background: var(--primary); color: var(--bg); box-shadow: 0 0 25px var(--primary); }
 .skill-item:hover i { color: var(--bg); }
 
-/* --- LOGO & UI --- */
-.logo { font-size: 3.5rem; font-weight: 800; text-align: center; color: var(--primary); margin-bottom: 10px; }
-.subtitle { text-align: center; opacity: 0.6; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 50px; }
-
+/* --- FORM --- */
 input, textarea {
     width: 100%; background: rgba(0,0,0,0.3); border: 1px solid #222;
-    padding: 18px; margin-bottom: 20px; border-radius: 12px; color: white;
-    box-sizing: border-box; font-family: inherit; font-size: 1rem;
+    padding: 18px; margin-bottom: 20px; border-radius: 12px; color: white; font-family: inherit;
 }
 input:focus, textarea:focus { border-color: var(--primary); outline: none; }
 
@@ -89,27 +81,18 @@ button[type="submit"] {
     background: linear-gradient(90deg, var(--primary), var(--secondary));
     color: white; font-weight: bold; font-size: 1.1rem; transition: 0.3s;
 }
-button[type="submit"]:hover { filter: brightness(1.2); box-shadow: 0 10px 30px rgba(112, 0, 255, 0.3); }
 
-.agb-box { height: 220px; overflow-y: auto; font-size: 0.9rem; color: #8892b0; padding-right: 15px; line-height: 1.6; }
+.agb-box { height: 150px; overflow-y: auto; font-size: 0.9rem; color: #8892b0; }
 
-/* --- BACKGROUND --- */
+/* --- ANIMATIONS --- */
 .area { position: fixed; width: 100%; height: 100vh; z-index: -1; top: 0; left: 0; }
 .circles li {
     position: absolute; list-style: none; width: 20px; height: 20px;
     background: rgba(0, 242, 255, 0.03); animation: animate 25s linear infinite; bottom: -150px;
 }
-.circles li:nth-child(1){ left: 25%; width: 80px; height: 80px; animation-delay: 0s; }
-.circles li:nth-child(2){ left: 10%; width: 20px; height: 20px; animation-delay: 2s; animation-duration: 12s; }
-.circles li:nth-child(3){ left: 70%; width: 20px; height: 20px; animation-delay: 4s; }
-/* ... (Animations-Code wird von GitHub automatisch übernommen) ... */
-@keyframes animate { 0%{transform: translateY(0) rotate(0deg); opacity: 1; border-radius: 0;} 100%{transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%;} }
+@keyframes animate { 0%{transform: translateY(0) rotate(0deg); opacity: 1;} 100%{transform: translateY(-1000px) rotate(720deg); opacity: 0;} }
 
-.fade-in { animation: fadeIn 1s ease-in forwards; }
+.fade-in { animation: fadeIn 1s ease-out forwards; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-@media (max-width: 600px) {
-    .cursor-dot, .cursor-outline { display: none; }
-    * { cursor: auto; }
-    .logo { font-size: 2.5rem; }
-}
+@media (max-width: 600px) { .cursor-dot, .cursor-outline { display: none; } * { cursor: auto; } }
