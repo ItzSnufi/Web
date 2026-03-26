@@ -3,18 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snufi Coding | Premium Business Solutions</title>
+    <title>Snufi Coding | Home</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="cursor-dot"></div><div class="cursor-outline"></div>
 
-    <!-- Sidebar Trigger -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-    
     <nav class="sidebar" id="sidebar">
-        <div class="close-btn" onclick="toggleMenu()">&times;</div>
         <ul class="nav-links">
             <li><a href="index.html" data-key="navHome">Startseite</a></li>
             <li><a href="preise.html" data-key="navPrices">Preise</a></li>
@@ -35,42 +32,33 @@
             <p class="subtitle" data-key="heroSubtitle">High-End Software Engineering</p>
         </header>
 
-        <main>
-            <!-- BIO -->
-            <section class="glass-card fade-in">
-                <h3 data-key="bioTitle">Über das Business</h3>
-                <p data-key="bioP1">Ich entwickle maßgeschneiderte Software-Lösungen für anspruchsvolle Kunden. Mein Fokus liegt auf Performance, Sicherheit und sauberer Architektur.</p>
-                <div class="skills-grid">
-                    <div class="skill-item"><i class="fab fa-java"></i> Java</div>
-                    <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-                    <div class="skill-item"><i class="fas fa-hashtag"></i> C#</div>
-                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
-                </div>
-            </section>
+        <section class="glass-card">
+            <h3 data-key="bioTitle">Über das Business</h3>
+            <p data-key="bioP1">Maßgeschneiderte Software-Lösungen für anspruchsvolle Kunden.</p>
+            <div class="skills-grid">
+                <div class="skill-item"><i class="fab fa-java"></i> Java</div>
+                <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                <div class="skill-item"><i class="fas fa-hashtag"></i> C#</div>
+            </div>
+        </section>
 
-            <!-- ANFORDERUNGEN SENDEN (FORMULAR) -->
-            <section class="glass-card fade-in">
-                <h2 data-key="formTitle">Projekt-Anforderungen senden</h2>
-                <p style="opacity: 0.6; margin-bottom: 20px;" data-key="formSubtitle">Beschreibe dein Vorhaben so detailliert wie möglich.</p>
-                
-                <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST">
-                    <input type="text" name="name" placeholder="Dein Name / Firma" required>
-                    <input type="email" name="email" placeholder="Deine E-Mail" required>
-                    <input type="text" name="subject" placeholder="Projekt-Thema (z.B. Java Bot, Web-App)" required>
-                    <textarea name="message" placeholder="Was sind deine Anforderungen?" rows="8" required></textarea>
-                    
-                    <!-- Hidden fields for FormSubmit -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_next" value="https://deine-seite.de/danke.html">
-                    
-                    <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage einreichen</button>
-                </form>
-            </section>
-        </main>
+        <section class="glass-card">
+            <h2 data-key="formTitle">Projekt-Anforderungen</h2>
+            <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Anforderungen..." rows="6" required></textarea>
+                <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage senden</button>
+            </form>
+        </section>
+    </div>
 
-        <footer>
-            <p>© 2026 Snufi Coding // developersnufi@gmail.com</p>
-        </footer>
+    <div id="thanks-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2 data-key="modalTitle">Danke!</h2>
+            <p data-key="modalText">Anfrage erhalten.</p>
+            <button onclick="closeModal()" class="submit-btn">Close</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

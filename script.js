@@ -2,27 +2,22 @@ const translations = {
     de: {
         navHome: "Startseite", navPrices: "Preise", navAgb: "AGBs",
         heroSubtitle: "High-End Software Engineering",
-        bioTitle: "Über das Business",
-        bioP1: "Ich entwickle maßgeschneiderte Software-Lösungen für anspruchsvolle Kunden. Mein Fokus liegt auf Performance, Sicherheit und sauberer Architektur.",
-        formTitle: "Projekt-Anforderungen senden",
-        formSubtitle: "Beschreibe dein Vorhaben so detailliert wie möglich.",
-        submitBtn: "Anfrage einreichen",
-        // AGB Texte (hier einfügen wie im vorherigen Beispiel)
+        bioTitle: "Über das Business", bioP1: "Maßgeschneiderte Software-Lösungen für anspruchsvolle Kunden.",
+        formTitle: "Projekt-Anforderungen", submitBtn: "Anfrage senden",
+        modalTitle: "Anfrage gesendet!", modalText: "Vielen Dank. Ich melde mich in Kürze bei dir.",
+        agbBody: "<h4>§1 Haftung</h4><p>Keine Haftung für Schäden durch Code-Nutzung.</p><h4>§2 Zahlung</h4><p>Zahlung nach Vereinbarung.</p>"
     },
     en: {
         navHome: "Home", navPrices: "Pricing", navAgb: "Terms",
         heroSubtitle: "High-End Software Engineering",
-        bioTitle: "About the Business",
-        bioP1: "I develop bespoke software solutions for demanding clients. My focus is on performance, security, and clean architecture.",
-        formTitle: "Send Project Requirements",
-        formSubtitle: "Describe your project as detailed as possible.",
-        submitBtn: "Submit Inquiry",
+        bioTitle: "About the Business", bioP1: "Bespoke software solutions for demanding clients.",
+        formTitle: "Project Requirements", submitBtn: "Submit Inquiry",
+        modalTitle: "Inquiry Sent!", modalText: "Thank you. I will get back to you shortly.",
+        agbBody: "<h4>§1 Liability</h4><p>No liability for damages caused by code usage.</p><h4>§2 Payment</h4><p>Payment as agreed.</p>"
     }
 };
 
-function toggleMenu() {
-    document.getElementById('sidebar').classList.toggle('active');
-}
+function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
 function setLanguage(lang) {
     localStorage.setItem('lang', lang);
@@ -41,6 +36,19 @@ function updateUI(lang) {
 // Startup
 const savedLang = localStorage.getItem('lang') || 'de';
 updateUI(savedLang);
+
+// Form handling
+const form = document.getElementById('mainForm');
+if(form) {
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        fetch(this.action, { method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' }})
+        .then(() => { openModal(); form.reset(); });
+    });
+}
+
+function openModal() { document.getElementById('thanks-modal').classList.add('active'); }
+function closeModal() { document.getElementById('thanks-modal').classList.remove('active'); }
 
 // Cursor
 const dot = document.querySelector(".cursor-dot");

@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>AGBs | Snufi Coding</title>
+    <meta charset="UTF-8"><title>AGB | Snufi Coding</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="cursor-dot"></div><div class="cursor-outline"></div>
-    
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
             <li><a href="index.html" data-key="navHome">Startseite</a></li>
@@ -17,21 +14,13 @@
             <li><a href="agb.html" data-key="navAgb">AGBs</a></li>
         </ul>
     </nav>
-
-    <div class="lang-switch">
-        <button onclick="setLanguage('de')" id="btn-de">DE</button>
-        <button onclick="setLanguage('en')" id="btn-en">EN</button>
-    </div>
-
+    <div class="lang-switch"><button onclick="setLanguage('de')" id="btn-de">DE</button><button onclick="setLanguage('en')" id="btn-en">EN</button></div>
     <div class="container">
-        <div class="glass-card fade-in">
-            <h1 id="agb-title" data-key="agbTitle">Allgemeine Geschäftsbedingungen</h1>
-            <div class="agb-box" id="agb-content" data-key="agbBody">
-                <!-- Hier fügt das JavaScript die Texte ein -->
-            </div>
+        <div class="glass-card">
+            <h1 data-key="navAgb">AGBs</h1>
+            <div class="agb-box" data-key="agbBody"></div>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
