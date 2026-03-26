@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"><title>Snufi Coding | Home</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snufi Coding | Premium Business Solutions</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="cursor-dot"></div><div class="cursor-outline"></div>
 
+    <!-- Sidebar Trigger -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    
     <nav class="sidebar" id="sidebar">
+        <div class="close-btn" onclick="toggleMenu()">&times;</div>
         <ul class="nav-links">
-            <li><a href="index.html" class="nav-item" data-key="navHome">Startseite</a></li>
-            <li><a href="preise.html" class="nav-item" data-key="navPrices">Preise</a></li>
-            <li><a href="agb.html" class="nav-item" data-key="navAgb">AGBs</a></li>
+            <li><a href="index.html" data-key="navHome">Startseite</a></li>
+            <li><a href="preise.html" data-key="navPrices">Preise</a></li>
+            <li><a href="agb.html" data-key="navAgb">AGBs</a></li>
         </ul>
     </nav>
 
@@ -21,14 +27,50 @@
         <button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li></ul></div>
+    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li></ul></div>
 
     <div class="container">
-        <div class="logo">Snufi<span>Coding</span></div>
-        <section class="glass-card">
-            <h2 id="page-title">Willkommen</h2>
-            <p id="page-desc">Premium Software Engineering & Custom Solutions.</p>
-        </section>
+        <header>
+            <div class="logo">Snufi<span>Coding</span></div>
+            <p class="subtitle" data-key="heroSubtitle">High-End Software Engineering</p>
+        </header>
+
+        <main>
+            <!-- BIO -->
+            <section class="glass-card fade-in">
+                <h3 data-key="bioTitle">Über das Business</h3>
+                <p data-key="bioP1">Ich entwickle maßgeschneiderte Software-Lösungen für anspruchsvolle Kunden. Mein Fokus liegt auf Performance, Sicherheit und sauberer Architektur.</p>
+                <div class="skills-grid">
+                    <div class="skill-item"><i class="fab fa-java"></i> Java</div>
+                    <div class="skill-item"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-item"><i class="fas fa-hashtag"></i> C#</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                </div>
+            </section>
+
+            <!-- ANFORDERUNGEN SENDEN (FORMULAR) -->
+            <section class="glass-card fade-in">
+                <h2 data-key="formTitle">Projekt-Anforderungen senden</h2>
+                <p style="opacity: 0.6; margin-bottom: 20px;" data-key="formSubtitle">Beschreibe dein Vorhaben so detailliert wie möglich.</p>
+                
+                <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST">
+                    <input type="text" name="name" placeholder="Dein Name / Firma" required>
+                    <input type="email" name="email" placeholder="Deine E-Mail" required>
+                    <input type="text" name="subject" placeholder="Projekt-Thema (z.B. Java Bot, Web-App)" required>
+                    <textarea name="message" placeholder="Was sind deine Anforderungen?" rows="8" required></textarea>
+                    
+                    <!-- Hidden fields for FormSubmit -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://deine-seite.de/danke.html">
+                    
+                    <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage einreichen</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 Snufi Coding // developersnufi@gmail.com</p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
