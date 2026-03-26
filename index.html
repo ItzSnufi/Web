@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snufi Coding | Home</title>
+    <title>Snufi Coding | Premium Software Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="cursor-dot"></div><div class="cursor-outline"></div>
 
+    <!-- Navigation Trigger -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     
     <nav class="sidebar" id="sidebar">
@@ -28,41 +29,94 @@
     <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
 
     <div class="container">
-        <header>
+        <!-- SEKTION 1: HERO (Der erste Eindruck) -->
+        <header style="padding: 100px 0;">
             <div class="logo">Snufi<span>Coding</span></div>
             <p class="subtitle" data-key="heroSubtitle">High-End Software Engineering</p>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="#contact" class="submit-btn" style="text-decoration:none; display:inline-block; width:auto; padding: 15px 40px;" data-key="ctaButton">Projekt starten</a>
+            </div>
         </header>
 
+        <!-- SEKTION 2: WARUM SNUFI CODING? (Vorteile) -->
         <section class="glass-card">
-            <h3 data-key="bioTitle">Über mich</h3>
-            <p data-key="bioP1">Ich bin Snufi – Entwickler aus Leidenschaft mit Fokus auf effiziente, sichere und performante Algorithmen.</p>
-            <p data-key="bioP2">Ich lege höchsten Wert auf Clean Code und technische Präzision in jedem Projekt.</p>
-            
+            <h2 style="color: var(--primary); text-align: center; margin-bottom: 40px;" data-key="featuresTitle">Warum Snufi Coding?</h2>
             <div class="skills-grid">
-                <div class="skill-item"><i class="fab fa-java"></i> Java</div>
-                <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-                <div class="skill-item"><i class="fas fa-hashtag"></i> C#</div>
-                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
+                <div class="skill-item">
+                    <i class="fas fa-bolt"></i>
+                    <h4 data-key="feat1T">Performance</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.7;" data-key="feat1D">Optimierter Code für maximale Geschwindigkeit.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4 data-key="feat2T">Sicherheit</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.7;" data-key="feat2D">Schutz vor Exploits und Datenverlust.</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-code"></i>
+                    <h4 data-key="feat3T">Clean Code</h4>
+                    <p style="font-size: 0.8rem; opacity: 0.7;" data-key="feat3D">Wartbare und zukunftssichere Software.</p>
+                </div>
             </div>
         </section>
 
+        <!-- SEKTION 3: DER PROZESS (Wie es abläuft) -->
         <section class="glass-card">
+            <h2 style="text-align: center; margin-bottom: 40px;" data-key="processTitle">Dein Weg zum fertigen Produkt</h2>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="price-item" style="text-align: left; display: flex; align-items: center; gap: 20px;">
+                    <span style="font-size: 2rem; color: var(--primary); font-weight: bold;">01</span>
+                    <div><b data-key="step1T">Analyse</b><br><span data-key="step1D">Wir besprechen deine Anforderungen im Detail.</span></div>
+                </div>
+                <div class="price-item" style="text-align: left; display: flex; align-items: center; gap: 20px;">
+                    <span style="font-size: 2rem; color: var(--secondary); font-weight: bold;">02</span>
+                    <div><b data-key="step2T">Entwicklung</b><br><span data-key="step2D">Ich programmiere deine Lösung mit regelmäßigen Updates.</span></div>
+                </div>
+                <div class="price-item" style="text-align: left; display: flex; align-items: center; gap: 20px;">
+                    <span style="font-size: 2rem; color: var(--primary); font-weight: bold;">03</span>
+                    <div><b data-key="step3T">Deployment</b><br><span data-key="step3D">Die Software geht live und wird intensiv getestet.</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEKTION 4: FAQ (Fragen klären) -->
+        <section class="glass-card">
+            <h2 style="text-align: center; margin-bottom: 30px;">FAQ</h2>
+            <div style="display: grid; gap: 15px;">
+                <details style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; cursor: pointer;">
+                    <summary data-key="faq1Q">Wie lange dauert ein Projekt?</summary>
+                    <p style="padding-top: 10px; opacity: 0.7;" data-key="faq1A">Je nach Komplexität zwischen 3 Tagen und 4 Wochen.</p>
+                </details>
+                <details style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; cursor: pointer;">
+                    <summary data-key="faq2Q">Welche Zahlungsmethoden gibt es?</summary>
+                    <p style="padding-top: 10px; opacity: 0.7;" data-key="faq2A">PayPal, Krypto oder Banküberweisung.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- SEKTION 5: KONTAKT (Der Abschluss) -->
+        <section id="contact" class="glass-card">
             <h2 data-key="formTitle">Projekt-Anforderungen senden</h2>
             <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
                 <input type="text" name="name" placeholder="Name" required>
                 <input type="email" name="email" placeholder="E-Mail" required>
-                <textarea name="message" placeholder="Beschreibe deine Anforderungen..." rows="6" required></textarea>
-                <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage einreichen</button>
+                <textarea name="message" placeholder="Beschreibe deine Anforderungen so detailliert wie möglich..." rows="6" required></textarea>
+                <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage jetzt einreichen</button>
             </form>
         </section>
+
+        <footer style="text-align: center; opacity: 0.3; padding-bottom: 50px;">
+            <p>&copy; 2026 Snufi Coding | All Rights Reserved</p>
+        </footer>
     </div>
 
+    <!-- Danke Modal -->
     <div id="thanks-modal" class="modal-overlay">
         <div class="modal-content">
-            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+            <i class="fas fa-rocket" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
             <h2 data-key="modalTitle">Danke!</h2>
-            <p data-key="modalText">Deine Anfrage wurde erfolgreich gesendet.</p>
-            <button onclick="closeModal()" class="submit-btn" style="width: auto; padding: 10px 40px;">OK</button>
+            <p data-key="modalText">Anfrage erhalten.</p>
+            <button onclick="closeModal()" class="submit-btn">Schließen</button>
         </div>
     </div>
 
