@@ -1,122 +1,187 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snufi Coding | Premium Software Solutions</title>
+    <title>Snufi Coding | Enterprise Software Engineering</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="cursor-dot"></div><div class="cursor-outline"></div>
 
-    <!-- Navigation Trigger -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
-    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
-            <li><a href="index.html" data-key="navHome">Startseite</a></li>
-            <li><a href="preise.html" data-key="navPrices">Preise</a></li>
-            <li><a href="agb.html" data-key="navAgb">AGBs</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="#contact" onclick="toggleMenu()">Start Project</a></li>
         </ul>
     </nav>
-
-    <div class="lang-switch">
-        <button onclick="setLanguage('de')" id="btn-de">DE</button>
-        <button onclick="setLanguage('en')" id="btn-en">EN</button>
-    </div>
 
     <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
 
     <div class="container">
-        <!-- SEKTION 1: HERO (Der erste Eindruck) -->
-        <header style="padding: 100px 0;">
+        <header class="hero-section">
             <div class="logo">Snufi<span>Coding</span></div>
-            <p class="subtitle" data-key="heroSubtitle">High-End Software Engineering</p>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="#contact" class="submit-btn" style="text-decoration:none; display:inline-block; width:auto; padding: 15px 40px;" data-key="ctaButton">Projekt starten</a>
+            <p class="subtitle">Next-Generation Software Solutions</p>
+            <p class="hero-description">We build scalable, secure, and high-performance applications for ambitious businesses. From concept to deployment, we deliver engineering excellence.</p>
+            <div class="cta-wrapper">
+                <a href="#contact" class="submit-btn main-cta">Explore Solutions</a>
+                <a href="#tech" class="secondary-btn">Our Tech Stack</a>
             </div>
         </header>
 
-        <!-- SEKTION 2: WARUM SNUFI CODING? (Vorteile) -->
-        <section class="glass-card">
-            <h2 style="color: var(--primary); text-align: center; margin-bottom: 40px;" data-key="featuresTitle">Warum Snufi Coding?</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fas fa-bolt"></i>
-                    <h4 data-key="feat1T">Performance</h4>
-                    <p style="font-size: 0.8rem; opacity: 0.7;" data-key="feat1D">Optimierter Code für maximale Geschwindigkeit.</p>
+        <main>
+            <section class="glass-card fade-in">
+                <h2 class="section-title">Engineering Excellence</h2>
+                <p class="section-intro">We don't just write code; we architect solutions that drive growth and ensure stability.</p>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-rocket"></i>
+                        <h3>Performance</h3>
+                        <p>Optimized algorithms and architectures for low-latency and high-throughput execution.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-user-shield"></i>
+                        <h3>Security First</h3>
+                        <p>Built-in security measures against common exploits, data breaches, and unauthorized access.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-server"></i>
+                        <h3>Scalability</h3>
+                        <p>Cloud-native designs that grow seamlessly with your user base and data demands.</p>
+                    </div>
                 </div>
-                <div class="skill-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <h4 data-key="feat2T">Sicherheit</h4>
-                    <p style="font-size: 0.8rem; opacity: 0.7;" data-key="feat2D">Schutz vor Exploits und Datenverlust.</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <h4 data-key="feat3T">Clean Code</h4>
-                    <p style="font-size: 0.8rem; opacity: 0.7;" data-key="feat3D">Wartbare und zukunftssichere Software.</p>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SEKTION 3: DER PROZESS (Wie es abläuft) -->
-        <section class="glass-card">
-            <h2 style="text-align: center; margin-bottom: 40px;" data-key="processTitle">Dein Weg zum fertigen Produkt</h2>
-            <div style="display: flex; flex-direction: column; gap: 20px;">
-                <div class="price-item" style="text-align: left; display: flex; align-items: center; gap: 20px;">
-                    <span style="font-size: 2rem; color: var(--primary); font-weight: bold;">01</span>
-                    <div><b data-key="step1T">Analyse</b><br><span data-key="step1D">Wir besprechen deine Anforderungen im Detail.</span></div>
+            <section id="tech" class="glass-card fade-in">
+                <h2 class="section-title">Our Technology Stack</h2>
+                <p class="section-intro">We utilize industry-leading technologies to build robust applications.</p>
+                
+                <div class="tech-stack-wrapper">
+                    <div class="tech-group">
+                        <h3>Backend & Core</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item"><i class="fab fa-java"></i> Java (Spring Boot)</div>
+                            <div class="skill-item"><i class="fab fa-python"></i> Python (Django/FastAPI)</div>
+                            <div class="skill-item"><i class="fas fa-hashtag"></i> C# (.NET Core)</div>
+                            <div class="skill-item"><i class="fab fa-rust"></i> Rust (High Performance)</div>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Frontend & Mobile</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item"><i class="fab fa-react"></i> React.js / Next.js</div>
+                            <div class="skill-item"><i class="fab fa-vuejs"></i> Vue.js</div>
+                            <div class="skill-item"><i class="fab fa-android"></i> Kotlin (Native)</div>
+                        </div>
+                    </div>
+                    <div class="tech-group">
+                        <h3>Infrastructure & Databases</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item"><i class="fas fa-database"></i> PostgreSQL / MySQL</div>
+                            <div class="skill-item"><i class="fas fa-cloud"></i> AWS / Azure / GCP</div>
+                            <div class="skill-item"><i class="fab fa-docker"></i> Docker / Kubernetes</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="price-item" style="text-align: left; display: flex; align-items: center; gap: 20px;">
-                    <span style="font-size: 2rem; color: var(--secondary); font-weight: bold;">02</span>
-                    <div><b data-key="step2T">Entwicklung</b><br><span data-key="step2D">Ich programmiere deine Lösung mit regelmäßigen Updates.</span></div>
+            </section>
+
+            <section class="glass-card fade-in">
+                <h2 class="section-title">Our Development Lifecycle</h2>
+                <p class="section-intro">A transparent and iterative process ensuring your vision is realized.</p>
+                <div class="workflow-steps">
+                    <div class="workflow-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Consultation & Requirements</h3>
+                            <p>We analyze your needs, define the scope, and create a technical roadmap.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Design & Prototyping</h3>
+                            <p>We architect the solution and design UI/UX prototypes for your approval.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Iterative Development</h3>
+                            <p>Our engineers build the application using Agile methodologies with regular sprint reviews.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Testing & Deployment</h3>
+                            <p>Rigorous quality assurance (QA) is performed before deploying to production.</p>
+                        </div>
+                    </div>
+                    <div class="workflow-step">
+                        <div class="step-number">05</div>
+                        <div class="step-content">
+                            <h3>Support & Maintenance</h3>
+                            <p>We provide ongoing monitoring, updates, and scalability support post-launch.</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="price-item" style="text-align: left; display: flex; align-items: center; gap: 20px;">
-                    <span style="font-size: 2rem; color: var(--primary); font-weight: bold;">03</span>
-                    <div><b data-key="step3T">Deployment</b><br><span data-key="step3D">Die Software geht live und wird intensiv getestet.</span></div>
+            </section>
+
+            <section class="glass-card fade-in">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-intro">Clear answers to common client inquiries.</p>
+                <div class="faq-wrapper">
+                    <details class="faq-item">
+                        <summary>What is your typical project timeline?</summary>
+                        <p>Timelines vary based on complexity. A Minimum Viable Product (MVP) usually takes 4–8 weeks, while full-scale enterprise applications can take several months.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do you ensure code quality?</summary>
+                        <p>We enforce strict static code analysis, require comprehensive unit testing (TDD where applicable), and conduct mandatory peer code reviews for every single deployment.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What are your payment terms?</summary>
+                        <p>Typically, we require a 25-50% deposit upfront, with the remaining balance split across project milestones (e.g., prototype approval, beta launch, final deployment).</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you offer post-deployment support?</summary>
+                        <p>Yes, we offer custom maintenance packages that include server monitoring, OS security updates, bug fixes, and continuous feature integration.</p>
+                    </details>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- SEKTION 4: FAQ (Fragen klären) -->
-        <section class="glass-card">
-            <h2 style="text-align: center; margin-bottom: 30px;">FAQ</h2>
-            <div style="display: grid; gap: 15px;">
-                <details style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; cursor: pointer;">
-                    <summary data-key="faq1Q">Wie lange dauert ein Projekt?</summary>
-                    <p style="padding-top: 10px; opacity: 0.7;" data-key="faq1A">Je nach Komplexität zwischen 3 Tagen und 4 Wochen.</p>
-                </details>
-                <details style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 10px; cursor: pointer;">
-                    <summary data-key="faq2Q">Welche Zahlungsmethoden gibt es?</summary>
-                    <p style="padding-top: 10px; opacity: 0.7;" data-key="faq2A">PayPal, Krypto oder Banküberweisung.</p>
-                </details>
-            </div>
-        </section>
+            <section id="contact" class="glass-card fade-in contact-section">
+                <h2 class="section-title">Initiate Your Project</h2>
+                <p class="section-intro">Submit your requirements to receive a comprehensive technical proposal.</p>
+                <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
+                    <div class="form-group-row">
+                        <input type="text" name="name" placeholder="Contact Person Name" required>
+                        <input type="text" name="company" placeholder="Company Name (Optional)">
+                    </div>
+                    <input type="email" name="email" placeholder="Business Email Address" required>
+                    <input type="text" name="subject" placeholder="Project Title (e.g., IoT Dashboard, e-Commerce App)" required>
+                    <textarea name="message" placeholder="Detailed requirements, user stories, desired tech stack, and approximate budget..." rows="8" required></textarea>
+                    
+                    <button type="submit" class="submit-btn">Request Technical Proposal</button>
+                </form>
+            </section>
+        </main>
 
-        <!-- SEKTION 5: KONTAKT (Der Abschluss) -->
-        <section id="contact" class="glass-card">
-            <h2 data-key="formTitle">Projekt-Anforderungen senden</h2>
-            <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="E-Mail" required>
-                <textarea name="message" placeholder="Beschreibe deine Anforderungen so detailliert wie möglich..." rows="6" required></textarea>
-                <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage jetzt einreichen</button>
-            </form>
-        </section>
-
-        <footer style="text-align: center; opacity: 0.3; padding-bottom: 50px;">
-            <p>&copy; 2026 Snufi Coding | All Rights Reserved</p>
+        <footer>
+            <p>&copy; 2026 Snufi Coding | London | engineers@snuficoding.com</p>
+            <p style="font-size: 0.8rem; opacity: 0.5;">Scale fast. Engineering excellence included.</p>
         </footer>
     </div>
 
-    <!-- Danke Modal -->
     <div id="thanks-modal" class="modal-overlay">
         <div class="modal-content">
-            <i class="fas fa-rocket" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
-            <h2 data-key="modalTitle">Danke!</h2>
-            <p data-key="modalText">Anfrage erhalten.</p>
-            <button onclick="closeModal()" class="submit-btn">Schließen</button>
+            <i class="fas fa-handshake" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
+            <h2>Inquiry Received</h2>
+            <p>Your requirements have been submitted to our engineering team. We will review them and reach out within 48 business hours.</p>
+            <button onclick="closeModal()" class="submit-btn" style="width: auto; padding: 10px 40px;">Close</button>
         </div>
     </div>
 
