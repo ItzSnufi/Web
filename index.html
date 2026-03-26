@@ -11,6 +11,7 @@
     <div class="cursor-dot"></div><div class="cursor-outline"></div>
 
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
             <li><a href="index.html" data-key="navHome">Startseite</a></li>
@@ -24,7 +25,7 @@
         <button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
 
     <div class="container">
         <header>
@@ -33,31 +34,35 @@
         </header>
 
         <section class="glass-card">
-            <h3 data-key="bioTitle">Über das Business</h3>
-            <p data-key="bioP1">Maßgeschneiderte Software-Lösungen für anspruchsvolle Kunden.</p>
+            <h3 data-key="bioTitle">Über mich</h3>
+            <p data-key="bioP1">Ich bin Snufi – Entwickler aus Leidenschaft mit Fokus auf effiziente, sichere und performante Algorithmen.</p>
+            <p data-key="bioP2">Ich lege höchsten Wert auf Clean Code und technische Präzision in jedem Projekt.</p>
+            
             <div class="skills-grid">
                 <div class="skill-item"><i class="fab fa-java"></i> Java</div>
                 <div class="skill-item"><i class="fab fa-python"></i> Python</div>
                 <div class="skill-item"><i class="fas fa-hashtag"></i> C#</div>
+                <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
             </div>
         </section>
 
         <section class="glass-card">
-            <h2 data-key="formTitle">Projekt-Anforderungen</h2>
+            <h2 data-key="formTitle">Projekt-Anforderungen senden</h2>
             <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
                 <input type="text" name="name" placeholder="Name" required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" placeholder="Anforderungen..." rows="6" required></textarea>
-                <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage senden</button>
+                <input type="email" name="email" placeholder="E-Mail" required>
+                <textarea name="message" placeholder="Beschreibe deine Anforderungen..." rows="6" required></textarea>
+                <button type="submit" class="submit-btn" data-key="submitBtn">Anfrage einreichen</button>
             </form>
         </section>
     </div>
 
     <div id="thanks-modal" class="modal-overlay">
         <div class="modal-content">
+            <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary); margin-bottom: 15px;"></i>
             <h2 data-key="modalTitle">Danke!</h2>
-            <p data-key="modalText">Anfrage erhalten.</p>
-            <button onclick="closeModal()" class="submit-btn">Close</button>
+            <p data-key="modalText">Deine Anfrage wurde erfolgreich gesendet.</p>
+            <button onclick="closeModal()" class="submit-btn" style="width: auto; padding: 10px 40px;">OK</button>
         </div>
     </div>
 
