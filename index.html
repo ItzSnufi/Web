@@ -15,7 +15,7 @@
         <ul class="nav-links">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
-            <li><a href="reviews.html"><i class="fas fa-chart-line"></i> Reviews & Stats</a></li>
+            <!-- Reviews Link wurde hier entfernt -->
             <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
             <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
@@ -69,7 +69,6 @@
             <!-- DETAILED TECH STACK -->
             <section class="glass-card">
                 <h2 class="section-title">Our Technical Ecosystem</h2>
-                <p class="section-intro">We leverage the most powerful tools in the industry to deliver robust solutions.</p>
                 <div class="tech-group">
                     <h3 style="color:var(--primary); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px;">BACKEND & CORE</h3>
                     <div class="skills-grid">
@@ -94,34 +93,10 @@
             <section class="glass-card">
                 <h2 class="section-title">The Development Journey</h2>
                 <div class="workflow-steps">
-                    <div class="workflow-step">
-                        <div class="step-number">01</div>
-                        <div class="step-content">
-                            <h3>Discovery & Blueprinting</h3>
-                            <p>Detailed analysis of your business logic, user personas, and technical requirements to create a bulletproof roadmap.</p>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">02</div>
-                        <div class="step-content">
-                            <h3>Iterative Engineering</h3>
-                            <p>Developing in two-week sprints with constant feedback loops, automated testing (TDD), and transparent progress reports.</p>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">03</div>
-                        <div class="step-content">
-                            <h3>Quality Assurance</h3>
-                            <p>Rigorous stress testing, security penetration tests, and cross-browser validation before the final launch.</p>
-                        </div>
-                    </div>
-                    <div class="workflow-step">
-                        <div class="step-number">04</div>
-                        <div class="step-content">
-                            <h3>Launch & Scaling</h3>
-                            <p>Production deployment with zero-downtime strategies and 24/7 infrastructure monitoring to ensure uptime.</p>
-                        </div>
-                    </div>
+                    <div class="workflow-step"><div class="step-number">01</div><div class="step-content"><h3>Discovery & Blueprinting</h3><p>Detailed analysis of your business logic...</p></div></div>
+                    <div class="workflow-step"><div class="step-number">02</div><div class="step-content"><h3>Iterative Engineering</h3><p>Developing in two-week sprints...</p></div></div>
+                    <div class="workflow-step"><div class="step-number">03</div><div class="step-content"><h3>Quality Assurance</h3><p>Rigorous stress testing and security tests...</p></div></div>
+                    <div class="workflow-step"><div class="step-number">04</div><div class="step-content"><h3>Launch & Scaling</h3><p>Production deployment with zero-downtime.</p></div></div>
                 </div>
             </section>
 
@@ -129,41 +104,22 @@
             <section class="glass-card">
                 <h2 class="section-title">Common Questions</h2>
                 <div class="faq-wrapper">
-                    <details class="faq-item">
-                        <summary>How do you handle project communication?</summary>
-                        <p>We use Slack for real-time chat, Jira for task tracking, and weekly video calls to ensure we stay perfectly aligned with your vision.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Do I own the source code?</summary>
-                        <p>Absolutely. Upon final payment, you receive full ownership of the intellectual property and the complete Git repository access.</p>
-                    </details>
-                    <details class="faq-item">
-                        <summary>Can you work with existing codebases?</summary>
-                        <p>Yes, we offer legacy code modernization and can integrate our new features into your current systems via APIs or microservices.</p>
-                    </details>
+                    <details class="faq-item"><summary>How do you handle project communication?</summary><p>We use Slack, Jira, and weekly calls.</p></details>
+                    <details class="faq-item"><summary>Do I own the source code?</summary><p>Absolutely. You receive full ownership upon final payment.</p></details>
                 </div>
             </section>
 
             <!-- CONTACT SECTION -->
             <section id="contact" class="glass-card contact-section">
                 <h2 class="section-title">Ready to Start?</h2>
-                <p class="section-intro">Fill out the form below to receive a custom technical breakdown and fixed-price quote.</p>
-                
                 <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="URGENT: New Project Inquiry">
-
                     <div class="form-group-row">
                         <input type="text" name="name" placeholder="Contact Person" required>
                         <input type="email" name="email" placeholder="Email Address" required>
                     </div>
-                    <div class="form-group-row">
-                        <input type="text" name="company" placeholder="Company Name">
-                        <input type="text" name="budget" placeholder="Approx. Budget (Optional)">
-                    </div>
-                    <textarea name="message" placeholder="Please provide details about your project, current challenges, and desired launch date..." rows="6" required></textarea>
-                    
+                    <textarea name="message" placeholder="Details about your project..." rows="6" required></textarea>
                     <button type="submit" class="submit-btn">Submit Proposal Request</button>
                 </form>
             </section>
@@ -171,39 +127,22 @@
 
         <footer>
             <p>&copy; 2026 Snufi Coding | Germany | developersnufi@gmail.com</p>
+            <p style="margin-top: 10px;">
+                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint</a>
+            </p>
+            
+            <!-- Page Visit Counter -->
+            <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; gap: 10px;">
+                <span style="font-size: 0.7rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px;">Live Statistics:</span>
+                <div style="background: #1f2937; color: #10b981; padding: 4px 10px; border-radius: 4px; font-family: monospace; font-weight: bold; border: 1px solid #374151;">
+                    <img src="https://count.getloli.com/get/@jan-lukas-sell-legal?theme=rule_734" alt="Count" style="vertical-align: middle; filter: hue-rotate(90deg);">
+                </div>
+                <span style="font-size: 0.7rem; color: #9ca3af;">Requests</span>
+            </div>
             <p style="font-size: 0.8rem; opacity: 0.4; margin-top: 10px;">Managed Cloud Hosting & Dedicated Engineering Support.</p>
         </footer>
     </div>
 
-    <!-- SUCCESS MODAL -->
-    <div id="thanks-modal" class="modal-overlay">
-        <div class="modal-content">
-            <i class="fas fa-rocket" style="font-size: 3.5rem; color: var(--primary); margin-bottom: 20px;"></i>
-            <h2>System Transmission Success!</h2>
-            <p>Your project data has been received. Our lead architect will review your inquiry and contact you within 48 hours.</p>
-            <button onclick="closeModal()" class="submit-btn" style="width: auto;">Close Terminal</button>
-        </div>
-    </div>
-     <!-- FOOTER -->
-        <footer>
-            <p>&copy; 2026 Snufi Coding | Germany | developersnufi@gmail.com</p>
-            <!-- NEU HINZUGEFÜGT: IMPRESSUM LINK -->
-            <p style="margin-top: 10px;">
-                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint</a>
-            </p><!-- Page Visit Counter in Crypto Style -->
-    <span style="font-size: 0.7rem; color: #9ca3af;">Requests</span>
-    </div>
-            <p style="font-size: 0.8rem; opacity: 0.4; margin-top: 10px;">Managed Cloud Hosting & Dedicated Engineering Support.</p>
-        </footer>
     <script src="script.js"></script>
-    <!-- Page Visit Counter in Crypto Style -->
-<div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #e5e7eb; display: flex; align-items: center; justify-content: center; gap: 10px;">
-    <span style="font-size: 0.7rem; color: #9ca3af; text-transform: uppercase; letter-spacing: 1px;">Live Statistics:</span>
-    <div style="background: #1f2937; color: #10b981; padding: 4px 10px; border-radius: 4px; font-family: 'Courier New', monospace; font-weight: bold; font-size: 0.9rem; border: 1px solid #374151; box-shadow: 0 0 10px rgba(16, 185, 129, 0.2);">
-        <!-- Dieser Dienst zählt die Aufrufe automatisch -->
-        <img src="https://count.getloli.com/get/@jan-lukas-sell-legal?theme=rule_734" alt="Visitor Count" style="vertical-align: middle; filter: hue-rotate(90deg) brightness(1.5);">
-    </div>
-    <span style="font-size: 0.7rem; color: #9ca3af;">Requests</span>
-</div>
 </body>
 </html>
