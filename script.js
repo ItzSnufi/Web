@@ -39,8 +39,12 @@ const translations = {
     }
 };
 
-// Logik für Sidebar, Sprache, Formular und Cursor
-function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
+// --- FUNKTIONEN ---
+
+function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    if(sidebar) sidebar.classList.toggle('active');
+}
 
 function setLanguage(lang) {
     localStorage.setItem('selectedLang', lang);
@@ -48,15 +52,29 @@ function setLanguage(lang) {
 }
 
 function updateUI(lang) {
-    document.querySelectorAll('[data-key]').forEach(el => {
+    // Alle Elemente mit data-key Attribut finden
+    const elements = document.querySelectorAll('[data-key]');
+    
+    elements.forEach(el => {
         const key = el.getAttribute('data-key');
-        if (translations[lang][key]) el.innerHTML = translations[lang][key];
+        if (translations[lang] && translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
     });
-    document.getElementById('btn-de').classList.toggle('active', lang === 'de');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+    // Button-Styling aktualisieren (active-Klasse)
+    const btnDe = document.getElementById('btn-de');
+    const btnEn = document.getElementById('btn-en');
+    
+    if(btnDe && btnEn) {
+        btnDe.classList.remove('active');
+        btnEn.classList.remove('active');
+        if(lang === 'de') btnDe.classList.add('active');
+        else btnEn.classList.add('active');
+    }
 }
 
-// Formular-Handling
+// Formular-Handling mit Modal-PopUp
 const form = document.getElementById('mainForm');
 if (form) {
     form.addEventListener('submit', function(e) {
@@ -68,21 +86,37 @@ if (form) {
         }).then(() => {
             openModal();
             form.reset();
-        });
+        }).catch(err => console.error("Form error:", err));
     });
 }
 
-function openModal() { document.getElementById('thanks-modal').classList.add('active'); }
-function closeModal() { document.getElementById('thanks-modal').classList.remove('active'); }
+function openModal() { 
+    const modal = document.getElementById('thanks-modal');
+    if(modal) modal.classList.add('active'); 
+}
 
-// Cursor
+function closeModal() { 
+    const modal = document.getElementById('thanks-modal');
+    if(modal) modal.classList.remove('active'); 
+}
+
+// Cursor Logic
 const dot = document.querySelector(".cursor-dot");
 const out = document.querySelector(".cursor-outline");
-window.addEventListener("mousemove", (e) => {
-    dot.style.top = e.clientY + "px"; dot.style.left = e.clientX + "px";
-    out.animate({ top: e.clientY + "px", left: e.clientX + "px" }, { duration: 500, fill: "forwards" });
-});
 
-// Start
-const savedLang = localStorage.getItem('selectedLang') || 'de';
-updateUI(savedLang);
+if(dot && out) {
+    window.addEventListener("mousemove", (e) => {
+        dot.style.top = e.clientY + "px";
+        dot.style.left = e.clientX + "px";
+        out.animate({
+            top: e.clientY + "px",
+            left: e.clientX + "px"
+        }, { duration: 500, fill: "forwards" });
+    });
+}
+
+// --- INITIALISIERUNG BEIM LADEN ---
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLang') || 'de';
+    updateUI(savedLang);
+});
