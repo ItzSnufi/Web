@@ -3,77 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snufi Coding | Full-Stack Solutions</title>
+    <title>Snufi Coding | Premium Solutions</title>
+    <!-- CSS Link - Stelle sicher, dass der Dateiname stimmt -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Cursor Effekte -->
     <div class="cursor-outline"></div>
     <div class="cursor-dot"></div>
 
+    <!-- Die drei Punkte an der Seite -->
+    <nav class="side-nav">
+        <a href="#start" class="nav-dot"><span id="nav-home">Startseite</span></a>
+        <a href="#prices-section" class="nav-dot"><span id="nav-prices">Preise</span></a>
+        <a href="#agb-section" class="nav-dot"><span id="nav-agb">AGBs</span></a>
+    </nav>
+
+    <!-- Sprachumschalter -->
     <div class="lang-switch">
         <button onclick="setLanguage('de')" id="btn-de" class="active">DE</button>
         <button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
+    <!-- Hintergrund Animation -->
     <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
 
     <div class="container">
-        <header>
-            <div class="logo glitch-effect" data-text="SnufiCoding">Snufi<span>Coding</span></div>
-            <p class="subtitle">Premium Software Engineering</p>
+        <!-- HEADER / START -->
+        <header id="start">
+            <div class="logo">Snufi<span>Coding</span></div>
+            <p class="subtitle" id="hero-subtitle">Premium Software Engineering</p>
         </header>
 
         <main>
+            <!-- ÜBER MICH -->
             <section class="glass-card fade-in">
-                <div class="bio-header">
-                    <i class="fas fa-user-shield"></i>
-                    <h3 id="bio-title">Über meine Arbeit</h3>
-                </div>
+                <h3 id="bio-title">Über meine Arbeit</h3>
                 <div class="bio-content">
-                    <p id="bio-p1">Ich bin Snufi – Entwickler aus Leidenschaft mit einem tiefen Verständnis für die Architektur moderner Software. Mein Fokus liegt nicht nur auf dem Schreiben von Code, sondern auf der Lösung komplexer Probleme durch effiziente, sichere und performante Algorithmen.</p>
-                    <p id="bio-p2">Egal ob du eine robuste Backend-Struktur in Java oder C# benötigst, dynamische Web-Applikationen realisieren willst oder spezialisierte Automatisierungen in Python und Lua suchst: Ich lege höchsten Wert auf Clean Code und technische Präzision.</p>
+                    <p id="bio-p1">Ich bin Snufi – Entwickler aus Leidenschaft mit einem tiefen Verständnis für moderne Softwarearchitektur. Ich löse komplexe Probleme durch effizienten und sicheren Code.</p>
+                    <p id="bio-p2">Egal ob Java, C# oder Python: Ich setze auf höchste technische Präzision und Clean Code.</p>
                 </div>
-            </section>
-
-            <section class="glass-card fade-in delay-1">
-                <h3 id="tech-title">Technologien & Sprachen</h3>
                 <div class="skills-grid">
                     <div class="skill-item"><i class="fab fa-java"></i> Java</div>
-                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
                     <div class="skill-item"><i class="fab fa-python"></i> Python</div>
-                    <div class="skill-item"><i class="fas fa-code"></i> Lua</div>
-                    <div class="skill-item"><i class="fab fa-html5"></i> HTML/CSS</div>
                     <div class="skill-item"><i class="fas fa-hashtag"></i> C#</div>
-                    <div class="skill-item"><i class="fab fa-php"></i> PHP</div>
-                    <div class="skill-item"><i class="fas fa-mobile-alt"></i> Kotlin</div>
+                    <div class="skill-item"><i class="fab fa-js"></i> JavaScript</div>
                     <div class="skill-item"><i class="fas fa-database"></i> SQL</div>
                 </div>
             </section>
 
-            <section class="glass-card fade-in delay-2">
+            <!-- PREISE SEKTION -->
+            <section id="prices-section" class="glass-card fade-in">
+                <h3 id="price-title">Investition</h3>
+                <div class="price-grid">
+                    <div class="price-item">
+                        <h4 id="p1-name">Skripte</h4>
+                        <span class="price-tag">ab 250€</span>
+                        <p id="p1-desc">Automatisierung & Tools</p>
+                    </div>
+                    <div class="price-item" style="border-color: var(--secondary);">
+                        <h4 id="p2-name">Full App</h4>
+                        <span class="price-tag">ab 1.500€</span>
+                        <p id="p2-desc">Komplette Lösungen</p>
+                    </div>
+                    <div class="price-item">
+                        <h4 id="p3-name">Consulting</h4>
+                        <span class="price-tag">300€ / h</span>
+                        <p id="p3-desc">Architektur & Review</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KONTAKTFORMULAR -->
+            <section class="glass-card fade-in">
                 <h2 id="form-title">Projekt anfragen</h2>
                 <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST">
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <textarea name="message" id="form-text" placeholder="Beschreibe dein Projekt..." rows="5" required></textarea>
-                    <input type="hidden" name="_captcha" value="false">
-                    <button type="submit" id="submit-btn">Anfrage absenden <i class="fas fa-paper-plane"></i></button>
+                    <button type="submit" id="submit-btn">Anfrage absenden</button>
                 </form>
             </section>
 
-            <section class="glass-card fade-in delay-3">
+            <!-- AGB SEKTION -->
+            <section id="agb-section" class="glass-card fade-in">
                 <h3 id="agb-title">Rechtliche Bestimmungen</h3>
                 <div class="agb-box" id="agb-content">
-                    <h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p>
-                    <h4>§2 Auftragserteilung</h4><p>Ein Vertrag kommt erst durch Bestätigung per E-Mail zustande.</p>
-                    <h4>§3 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>
+                    <!-- Inhalt wird per JS eingefügt -->
                 </div>
             </section>
         </main>
 
-        <footer>
+        <footer style="text-align: center; opacity: 0.4; padding: 40px 0;">
             <p>Ready for deployment // developersnufi@gmail.com</p>
         </footer>
     </div>
@@ -81,49 +104,91 @@
     <script>
         const texts = {
             de: {
+                navHome: "Startseite",
+                navPrices: "Preise",
+                navAgb: "AGBs",
+                heroSubtitle: "Premium Software Engineering",
                 bioTitle: "Über meine Arbeit",
-                bioP1: "Ich bin Snufi – Entwickler aus Leidenschaft mit einem tiefen Verständnis für die Architektur moderner Software. Mein Fokus liegt nicht nur auf dem Schreiben von Code, sondern auf der Lösung komplexer Probleme durch effiziente, sichere und performante Algorithmen.",
-                bioP2: "Egal ob du eine robuste Backend-Struktur in Java oder C# benötigst, dynamische Web-Applikationen realisieren willst oder spezialisierte Automatisierungen in Python und Lua suchst: Ich lege höchsten Wert auf Clean Code und technische Präzision.",
-                techTitle: "Technologien & Sprachen",
+                bioP1: "Ich bin Snufi – Entwickler aus Leidenschaft mit einem tiefen Verständnis für moderne Softwarearchitektur. Ich löse komplexe Probleme durch effizienten und sicheren Code.",
+                bioP2: "Egal ob Java, C# oder Python: Ich setze auf höchste technische Präzision und Clean Code.",
+                priceTitle: "Investition",
+                p1Name: "Skripte", p1Desc: "Automatisierung & Tools",
+                p2Name: "Full App", p2Desc: "Komplette Lösungen",
+                p3Name: "Consulting", p3Desc: "Architektur & Beratung",
                 formTitle: "Projekt anfragen",
                 formPlace: "Beschreibe dein Projekt...",
                 submit: "Anfrage absenden",
-                agbTitle: "Rechtliche Bestimmungen",
-                agb: "<h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p><h4>§2 Auftragserteilung</h4><p>Ein Vertrag kommt erst durch Bestätigung per E-Mail zustande.</p><h4>§3 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>"
+                agbTitle: "Allgemeine Geschäftsbedingungen",
+                agb: "<h4>§1 Geltungsbereich</h4><p>Diese AGB gelten für alle Dienstleistungen von Snufi Coding.</p><h4>§2 Qualität</h4><p>Exzellenz ist Standard. Jedes Projekt wird individuell nach höchsten Qualitätskriterien kalkuliert.</p><h4>§3 Haftung</h4><p>Für Schäden durch die Nutzung des Codes wird keine Haftung übernommen.</p>"
             },
             en: {
+                navHome: "Home",
+                navPrices: "Pricing",
+                navAgb: "Terms",
+                heroSubtitle: "Premium Software Engineering",
                 bioTitle: "About my Work",
-                bioP1: "I am Snufi – a passionate developer with a deep understanding of modern software architecture. My focus is not just on writing code, but on solving complex problems through efficient, secure, and performant algorithms.",
-                bioP2: "Whether you need a robust backend structure in Java or C#, want to realize dynamic web applications, or are looking for specialized automation in Python and Lua: I place the highest value on Clean Code and technical precision.",
-                techTitle: "Technologies & Languages",
+                bioP1: "I am Snufi – a developer by passion with a deep understanding of modern software architecture. I solve complex problems with efficient and secure code.",
+                bioP2: "Whether Java, C#, or Python: I prioritize technical precision and clean code.",
+                priceTitle: "Investment",
+                p1Name: "Scripts", p1Desc: "Automation & Tools",
+                p2Name: "Full App", p2Desc: "Complete Solutions",
+                p3Name: "Consulting", p3Desc: "Architecture & Advisory",
                 formTitle: "Inquire Project",
                 formPlace: "Describe your project...",
-                submit: "Submit Request",
-                agbTitle: "Legal Terms",
-                agb: "<h4>§1 Scope</h4><p>These terms apply to all services by Snufi Coding.</p><h4>§2 Ordering</h4><p>A contract is only formed upon confirmation via email.</p><h4>§3 Liability</h4><p>The developer is not liable for any damages arising from the use of the provided code.</p>"
+                submit: "Send Inquiry",
+                agbTitle: "Terms and Conditions",
+                agb: "<h4>§1 Scope</h4><p>These terms apply to all services by Snufi Coding.</p><h4>§2 Quality</h4><p>Excellence is the standard. Every project is calculated individually based on premium quality criteria.</p><h4>§3 Liability</h4><p>The developer is not liable for damages resulting from the use of the code.</p>"
             }
         };
 
         function setLanguage(lang) {
+            // Navigation
+            document.getElementById('nav-home').innerText = texts[lang].navHome;
+            document.getElementById('nav-prices').innerText = texts[lang].navPrices;
+            document.getElementById('nav-agb').innerText = texts[lang].navAgb;
+            
+            // Header & Bio
+            document.getElementById('hero-subtitle').innerText = texts[lang].heroSubtitle;
             document.getElementById('bio-title').innerText = texts[lang].bioTitle;
             document.getElementById('bio-p1').innerText = texts[lang].bioP1;
             document.getElementById('bio-p2').innerText = texts[lang].bioP2;
-            document.getElementById('tech-title').innerText = texts[lang].techTitle;
+
+            // Preise
+            document.getElementById('price-title').innerText = texts[lang].priceTitle;
+            document.getElementById('p1-name').innerText = texts[lang].p1Name;
+            document.getElementById('p1-desc').innerText = texts[lang].p1Desc;
+            document.getElementById('p2-name').innerText = texts[lang].p2Name;
+            document.getElementById('p2-desc').innerText = texts[lang].p2Desc;
+            document.getElementById('p3-name').innerText = texts[lang].p3Name;
+            document.getElementById('p3-desc').innerText = texts[lang].p3Desc;
+
+            // Formular
             document.getElementById('form-title').innerText = texts[lang].formTitle;
             document.getElementById('form-text').placeholder = texts[lang].formPlace;
-            document.getElementById('submit-btn').innerHTML = texts[lang].submit + ' <i class="fas fa-paper-plane"></i>';
+            document.getElementById('submit-btn').innerText = texts[lang].submit;
+
+            // AGBs
             document.getElementById('agb-title').innerText = texts[lang].agbTitle;
             document.getElementById('agb-content').innerHTML = texts[lang].agb;
+
+            // Button Active State
             document.getElementById('btn-de').classList.toggle('active', lang === 'de');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
         }
 
+        // Initialstart
+        setLanguage('de');
+
+        // Cursor Bewegung
         const cursorDot = document.querySelector(".cursor-dot");
         const cursorOutline = document.querySelector(".cursor-outline");
         window.addEventListener("mousemove", (e) => {
             cursorDot.style.left = e.clientX + "px";
             cursorDot.style.top = e.clientY + "px";
-            cursorOutline.animate({ left: e.clientX + "px", top: e.clientY + "px" }, { duration: 400, fill: "forwards" });
+            cursorOutline.animate({
+                left: e.clientX + "px",
+                top: e.clientY + "px"
+            }, { duration: 400, fill: "forwards" });
         });
     </script>
 </body>
