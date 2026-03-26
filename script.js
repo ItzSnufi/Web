@@ -2,36 +2,45 @@ const translations = {
     de: {
         navHome: "Startseite", navPrices: "Preise", navAgb: "AGBs",
         heroSubtitle: "High-End Software Engineering",
-        bioTitle: "Über mich",
-        bioP1: "Ich bin Snufi – Entwickler aus Leidenschaft mit Fokus auf effiziente, sichere und performante Algorithmen.",
-        bioP2: "Ich lege höchsten Wert auf Clean Code und technische Präzision in jedem Projekt.",
+        ctaButton: "Projekt starten",
+        featuresTitle: "Warum Snufi Coding?",
+        feat1T: "Performance", feat1D: "Optimierter Code für maximale Geschwindigkeit.",
+        feat2T: "Sicherheit", feat2D: "Schutz vor Exploits und Datenverlust.",
+        feat3T: "Clean Code", feat3D: "Wartbare und zukunftssichere Software.",
+        processTitle: "Dein Weg zum fertigen Produkt",
+        step1T: "Analyse", step1D: "Wir besprechen deine Anforderungen im Detail.",
+        step2T: "Entwicklung", step2D: "Ich programmiere deine Lösung mit regelmäßigen Updates.",
+        step3T: "Deployment", step3D: "Die Software geht live und wird intensiv getestet.",
+        faq1Q: "Wie lange dauert ein Projekt?", faq1A: "Je nach Komplexität zwischen 3 Tagen und 4 Wochen.",
+        faq2Q: "Welche Zahlungsmethoden gibt es?", faq2A: "PayPal, Krypto oder Banküberweisung.",
         formTitle: "Projekt-Anforderungen senden",
-        submitBtn: "Anfrage einreichen",
-        modalTitle: "Anfrage gesendet!",
-        modalText: "Vielen Dank für deine Nachricht. Ich werde mich in Kürze bei dir melden.",
-        agbTitle: "Allgemeine Geschäftsbedingungen",
-        agbContent: "<h4>§1 Haftung</h4><p>Nutzung des Codes auf eigene Gefahr.</p><h4>§2 Preise</h4><p>Individuelle Kalkulation je nach Aufwand.</p>"
+        submitBtn: "Anfrage jetzt einreichen",
+        modalTitle: "Startschuss gefallen!",
+        modalText: "Deine Anforderungen sind bei mir eingegangen. Ich melde mich in Kürze!",
     },
     en: {
         navHome: "Home", navPrices: "Pricing", navAgb: "Terms",
         heroSubtitle: "High-End Software Engineering",
-        bioTitle: "About Me",
-        bioP1: "I am Snufi – a passionate developer focused on efficient, secure, and high-performance algorithms.",
-        bioP2: "I prioritize Clean Code and technical precision in every project.",
+        ctaButton: "Start Project",
+        featuresTitle: "Why Snufi Coding?",
+        feat1T: "Performance", feat1D: "Optimized code for maximum speed.",
+        feat2T: "Security", feat2D: "Protection against exploits and data loss.",
+        feat3T: "Clean Code", feat3D: "Maintainable and future-proof software.",
+        processTitle: "Your Path to the Finished Product",
+        step1T: "Analysis", step1D: "We discuss your requirements in detail.",
+        step2T: "Development", step2D: "I develop your solution with regular updates.",
+        step3T: "Deployment", step3D: "The software goes live and is thoroughly tested.",
+        faq1Q: "How long does a project take?", faq1A: "Depending on complexity, between 3 days and 4 weeks.",
+        faq2Q: "Payment methods?", faq2A: "PayPal, Crypto, or Bank Transfer.",
         formTitle: "Submit Project Requirements",
-        submitBtn: "Submit Inquiry",
-        modalTitle: "Inquiry Sent!",
-        modalText: "Thank you for your message. I will get back to you shortly.",
-        agbTitle: "Terms and Conditions",
-        agbContent: "<h4>§1 Liability</h4><p>Use of code at your own risk.</p><h4>§2 Pricing</h4><p>Individual calculation based on complexity.</p>"
+        submitBtn: "Submit Inquiry Now",
+        modalTitle: "Liftoff!",
+        modalText: "Your requirements have been received. I'll get back to you shortly!",
     }
 };
 
-// --- FUNKTIONEN ---
-
-function toggleMenu() {
-    document.getElementById('sidebar').classList.toggle('active');
-}
+// Logik für Sidebar, Sprache, Formular und Cursor
+function toggleMenu() { document.getElementById('sidebar').classList.toggle('active'); }
 
 function setLanguage(lang) {
     localStorage.setItem('selectedLang', lang);
@@ -41,15 +50,13 @@ function setLanguage(lang) {
 function updateUI(lang) {
     document.querySelectorAll('[data-key]').forEach(el => {
         const key = el.getAttribute('data-key');
-        if (translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
-        }
+        if (translations[lang][key]) el.innerHTML = translations[lang][key];
     });
     document.getElementById('btn-de').classList.toggle('active', lang === 'de');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
 }
 
-// Formular Handling
+// Formular-Handling
 const form = document.getElementById('mainForm');
 if (form) {
     form.addEventListener('submit', function(e) {
@@ -68,7 +75,7 @@ if (form) {
 function openModal() { document.getElementById('thanks-modal').classList.add('active'); }
 function closeModal() { document.getElementById('thanks-modal').classList.remove('active'); }
 
-// Cursor Logic
+// Cursor
 const dot = document.querySelector(".cursor-dot");
 const out = document.querySelector(".cursor-outline");
 window.addEventListener("mousemove", (e) => {
@@ -76,6 +83,6 @@ window.addEventListener("mousemove", (e) => {
     out.animate({ top: e.clientY + "px", left: e.clientX + "px" }, { duration: 500, fill: "forwards" });
 });
 
-// Initialisierung
+// Start
 const savedLang = localStorage.getItem('selectedLang') || 'de';
 updateUI(savedLang);
