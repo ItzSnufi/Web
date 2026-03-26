@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8"><title>Snufi Coding | Home</title>
+    <meta charset="UTF-8"><title>Preise | Snufi Coding</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="cursor-dot"></div><div class="cursor-outline"></div>
-
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
@@ -15,22 +14,18 @@
             <li><a href="agb.html" class="nav-item" data-key="navAgb">AGBs</a></li>
         </ul>
     </nav>
-
     <div class="lang-switch">
         <button onclick="setLanguage('de')" id="btn-de">DE</button>
         <button onclick="setLanguage('en')" id="btn-en">EN</button>
     </div>
 
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li></ul></div>
-
     <div class="container">
-        <div class="logo">Snufi<span>Coding</span></div>
-        <section class="glass-card">
-            <h2 id="page-title">Willkommen</h2>
-            <p id="page-desc">Premium Software Engineering & Custom Solutions.</p>
-        </section>
+        <h1 id="price-h1" style="text-align:center">Preise</h1>
+        <div class="price-grid">
+            <div class="price-item"><h3>Small</h3><span class="price-tag">250€+</span></div>
+            <div class="price-item" style="border-color:var(--secondary)"><h3>Premium</h3><span class="price-tag">1500€+</span></div>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
