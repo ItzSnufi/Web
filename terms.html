@@ -3,68 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | Snufi Coding</title>
+    <title>Terms of Service | Snufi Coding - Legal & Service Agreement</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    
+    <!-- THEME TOGGLE -->
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <div class="theme-toggle-slider"></div>
+    </div>
+    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="index.html#contact">Start Project</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
+            <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
+            <li><a href="impressum.html"><i class="fas fa-info-circle"></i> Impressum</a></li>
+            <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()" style="color: var(--primary);"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
     </nav>
 
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <!-- ANIMATED BACKGROUND -->
+    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
     <div class="container">
-        <header class="hero-section" style="padding-bottom: 40px;">
-            <h1 class="section-title">Terms of Service</h1>
-            <p class="section-intro">Last Updated: March 2026. Please read these terms carefully before initiating a project.</p>
+        <header class="hero-section">
+            <h1 class="section-title reveal">Terms of Service</h1>
+            <p class="section-intro reveal">Last Updated: May 2026. Please read these terms carefully before initiating a project.</p>
         </header>
 
-        <section class="glass-card" style="text-align: left; line-height: 1.8;">
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: var(--primary);">1. Scope of Services</h3>
-                <p>Snufi Coding provides software development, architectural consulting, and technical maintenance. The specific scope of work is defined in the individual "Technical Proposal" provided to the client after the initial consultation.</p>
-            </div>
+        <!-- MAIN TERMS CONTENT -->
+        <section class="glass-card reveal">
+            <div class="terms-content">
+                <div class="term-section reveal-left">
+                    <h3><i class="fas fa-scope"></i> 1. Scope of Services</h3>
+                    <p>Snufi Coding provides comprehensive software development, architectural consulting, and technical maintenance services. The specific scope of work is defined in individual "Technical Proposals" provided to clients after initial consultation. Services include but are not limited to:</p>
+                    <ul class="terms-list">
+                        <li>Custom software development and web applications</li>
+                        <li>Mobile application development (iOS & Android)</li>
+                        <li>Database architecture and optimization</li>
+                        <li>Cloud infrastructure setup and management</li>
+                        <li>API development and integration</li>
+                        <li>Performance optimization and security audits</li>
+                    </ul>
+                </div>
 
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: var(--primary);">2. Payment Terms</h3>
-                <p>Unless otherwise agreed in writing, a 50% upfront deposit is required to secure development resources. Final delivery of the source code occurs only after the remaining balance has been settled in full.</p>
-            </div>
+                <div class="term-section reveal-right">
+                    <h3><i class="fas fa-credit-card"></i> 2. Payment Terms</h3>
+                    <p>Unless otherwise agreed in writing, the following payment structure applies:</p>
+                    <ul class="terms-list">
+                        <li><strong>50% upfront deposit</strong> required to secure development resources</li>
+                        <li><strong>25% milestone payment</strong> upon completion of agreed development phases</li>
+                        <li><strong>25% final payment</strong> due before source code delivery</li>
+                        <li>Payment methods accepted: Bank Transfer, PayPal, Cryptocurrency</li>
+                        <li>Late payments incur 2% monthly interest</li>
+                    </ul>
+                    <p class="terms-note">Final delivery of source code occurs only after remaining balance has been settled in full.</p>
+                </div>
 
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: var(--primary);">3. Intellectual Property</h3>
-                <p>Upon full payment, the client receives the non-exclusive, worldwide, and perpetual right to use, modify, and distribute the developed software. Snufi Coding retains the right to reuse non-proprietary code snippets and architectural patterns developed during the project.</p>
-            </div>
+                <div class="term-section reveal-left">
+                    <h3><i class="fas fa-lightbulb"></i> 3. Intellectual Property Rights</h3>
+                    <p>Upon full payment, client receives comprehensive rights to the developed software:</p>
+                    <ul class="terms-list">
+                        <li><strong>Non-exclusive, worldwide, perpetual rights</strong> to use, modify, and distribute the software</li>
+                        <li><strong>Complete source code ownership</strong> with full documentation</li>
+                        <li><strong>Commercial usage rights</strong> without additional licensing fees</li>
+                    </ul>
+                    <p class="terms-note">Snufi Coding retains the right to reuse non-proprietary code snippets, architectural patterns, and utility functions developed during projects for future client work.</p>
+                </div>
 
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: var(--primary);">4. Liability & Warranty</h3>
-                <p>We guarantee that the software functions according to the agreed specifications at the time of deployment. Snufi Coding is not liable for damages caused by third-party hosting, API changes by external providers, or improper handling by the client.</p>
-            </div>
+                <div class="term-section reveal-right">
+                    <h3><i class="fas fa-shield-alt"></i> 4. Liability & Warranty</h3>
+                    <p>We guarantee software functionality according to agreed specifications at time of deployment:</p>
+                    <ul class="terms-list">
+                        <li><strong>30-day bug-free warranty</strong> for all delivered features</li>
+                        <li><strong>Performance guarantees</strong> as specified in technical proposal</li>
+                        <li><strong>Security compliance</strong> with industry standards (OWASP Top 10)</li>
+                    </ul>
+                    <p class="terms-warning"><strong>Limitation of Liability:</strong> Snufi Coding is not liable for damages caused by:</p>
+                    <ul class="terms-list">
+                        <li>Third-party hosting providers or infrastructure failures</li>
+                        <li>API changes by external service providers</li>
+                        <li>Improper handling or modifications by client</li>
+                        <li>Force majeure events (natural disasters, wars, etc.)</li>
+                    </ul>
+                </div>
 
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: var(--primary);">5. Maintenance & Support</h3>
-                <p>Post-deployment support is provided for 30 days free of charge (bug fixes only). Extended maintenance contracts are available as separate subscriptions as seen on our pricing page.</p>
-            </div>
+                <div class="term-section reveal-left">
+                    <h3><i class="fas fa-tools"></i> 5. Maintenance & Support</h3>
+                    <p>Post-deployment support structure:</p>
+                    <ul class="terms-list">
+                        <li><strong>30 days free support</strong> for bug fixes only (excluding new features)</li>
+                        <li><strong>Extended maintenance contracts</strong> available as separate subscriptions</li>
+                        <li><strong>Support tiers:</strong> Basic (48h response), Professional (12h), Enterprise (1h)</li>
+                        <li><strong>Emergency support</strong> available 24/7 for enterprise clients</li>
+                    </ul>
+                </div>
 
-            <div style="margin-bottom: 30px;">
-                <h3 style="color: var(--primary);">6. Confidentiality</h3>
-                <p>Both parties agree to keep all project-related data, business secrets, and technical documentation strictly confidential. We are happy to sign a separate Non-Disclosure Agreement (NDA) upon request.</p>
+                <div class="term-section reveal-right">
+                    <h3><i class="fas fa-user-secret"></i> 6. Confidentiality</h3>
+                    <p>Both parties agree to maintain strict confidentiality:</p>
+                    <ul class="terms-list">
+                        <li>All project-related data, business secrets, and technical documentation remain confidential</li>
+                        <li>Non-disclosure extends 5 years beyond project completion</li>
+                        <li>We are happy to sign separate NDAs upon request</li>
+                        <li>Client data is stored securely with encryption at rest and in transit</li>
+                    </ul>
+                </div>
+
+                <div class="term-section reveal-left">
+                    <h3><i class="fas fa-gavel"></i> 7. Termination & Refunds</h3>
+                    <p>Project termination policies:</p>
+                    <ul class="terms-list">
+                        <li><strong>Client termination:</strong> Deposit is non-refundable after work commencement</li>
+                        <li><strong>Snufi Coding termination:</strong> Full refund of any payments for undelivered work</li>
+                        <li><strong>Force majeure:</strong> Either party may terminate without liability for uncontrollable events</li>
+                        <li><strong>30-day notice</strong> required for maintenance contract cancellations</li>
+                    </ul>
+                </div>
+
+                <div class="term-section reveal-right">
+                    <h3><i class="fas fa-balance-scale"></i> 8. Dispute Resolution</h3>
+                    <p>In case of disagreements:</p>
+                    <ul class="terms-list">
+                        <li><strong>Good faith negotiation</strong> for 30 days initially</li>
+                        <li><strong>Mediation</strong> through neutral third-party service</li>
+                        <li><strong>Legal jurisdiction:</strong> German courts apply to all disputes</li>
+                        <li><strong>Governing law:</strong> Federal Republic of Germany laws</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <footer style="margin-top: 50px; text-align: center;">
-            <p>&copy; 2026 Snufi Coding | All Rights Reserved</p>
-            <a href="index.html" style="color: var(--primary); text-decoration: none;">Return to Homepage</a>
+        <!-- ACCEPTANCE SECTION -->
+        <section class="glass-card reveal" style="text-align: center; border-left: 4px solid var(--primary);">
+            <h2 class="section-title">Ready to Get Started?</h2>
+            <p class="section-intro">By submitting a project request, you acknowledge that you have read, understood, and agree to these terms of service.</p>
+            <div class="cta-wrapper">
+                <a href="index.html#contact" class="submit-btn animate-glow">Accept Terms & Start Project</a>
+                <a href="support.html" class="secondary-btn">Questions? Contact Support</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Snufi Coding</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.6;">Premium Software Engineering & Cloud Solutions based in Germany.</p>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="list-style: none; opacity: 0.6; font-size: 0.9rem; line-height: 2;">
+                        <li><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
+                        <li><a href="pricing.html" style="color: inherit; text-decoration: none;">Pricing</a></li>
+                        <li><a href="support.html" style="color: inherit; text-decoration: none;">Support</a></li>
+                        <li><a href="terms.html" style="color: inherit; text-decoration: none;">Terms</a></li>
+                    </ul>
+                </div>
+                <div style="margin-top: 15px; font-size: 1.5rem; display: flex; gap: 20px;">
+                    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+            
+            <p>&copy; 2026 Snufi Coding | Germany</p>
+            <p style="margin-top: 10px;">
+                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint / Legal Notice</a>
+            </p>
         </footer>
     </div>
 
+    <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>
 </html>

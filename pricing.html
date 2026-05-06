@@ -3,87 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | Snufi Coding</title>
+    <title>Pricing | Snufi Coding - Enterprise Software Solutions</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    
+    <!-- THEME TOGGLE -->
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <div class="theme-toggle-slider"></div>
+    </div>
+    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li><a href="index.html#contact">Start Project</a></li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
+            <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
+            <li><a href="impressum.html"><i class="fas fa-info-circle"></i> Impressum</a></li>
+            <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()" style="color: var(--primary);"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
     </nav>
 
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <!-- ANIMATED BACKGROUND -->
+    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
     <div class="container">
-        <header class="hero-section" style="padding-bottom: 50px;">
-            <h1 class="section-title">Service Solutions</h1>
-            <p class="section-intro">Specialized engineering for Gaming, Mobile, and Web. High quality, competitive rates.</p>
+        <header class="hero-section">
+            <h1 class="section-title reveal">Enterprise Pricing Plans</h1>
+            <p class="section-intro reveal">Comprehensive solutions for every scale. From startups to enterprise systems.</p>
         </header>
 
+        <!-- STARTUP TIER -->
         <div class="pricing-grid">
-            <!-- MINECRAFT & GAMING -->
-            <div class="pricing-card">
-                <div class="tier-label">Minecraft & Core</div>
-                <div class="price">From <span>$49</span></div>
-                <p class="price-desc">Custom Plugins, Spigot/Paper API, and Server logic.</p>
-                <ul class="price-features">
-                    <li><i class="fas fa-check"></i> Custom Spigot/Paper Plugins</li>
-                    <li><i class="fas fa-check"></i> NMS & Packet Handling</li>
-                    <li><i class="fas fa-check"></i> Database (MySQL/MongoDB)</li>
-                    <li><i class="fas fa-check"></i> Optimization & Lag Fixes</li>
-                </ul>
-                <a href="index.html#contact" class="secondary-btn">Order Plugin</a>
-            </div>
-
-            <!-- WEB DEVELOPMENT (Featured) -->
-            <div class="pricing-card featured">
-                <div class="popular-badge">Most Requested</div>
-                <div class="tier-label">Web Systems</div>
+            <div class="pricing-card reveal-left">
+                <div class="tier-label">Startup</div>
                 <div class="price">From <span>$299</span></div>
-                <p class="price-desc">Modern React/Next.js Landingpages or Dashboards.</p>
+                <p class="price-desc">Perfect for startups and small businesses</p>
                 <ul class="price-features">
-                    <li><i class="fas fa-check"></i> Responsive Glassmorphism Design</li>
-                    <li><i class="fas fa-check"></i> SEO & Performance Optimized</li>
-                    <li><i class="fas fa-check"></i> Backend API Integration</li>
-                    <li><i class="fas fa-check"></i> Domain & Hosting Setup</li>
+                    <li><i class="fas fa-check"></i> Modern Web Applications</li>
+                    <li><i class="fas fa-check"></i> React/Vue/Angular Frontend</li>
+                    <li><i class="fas fa-check"></i> Node.js/Python Backend</li>
+                    <li><i class="fas fa-check"></i> PostgreSQL/MongoDB Database</li>
+                    <li><i class="fas fa-check"></i> RESTful API Development</li>
+                    <li><i class="fas fa-check"></i> Basic CI/CD Pipeline</li>
+                    <li><i class="fas fa-check"></i> 3 Months Support</li>
                 </ul>
-                <a href="index.html#contact" class="submit-btn">Start Website</a>
+                <a href="index.html#contact" class="secondary-btn">Get Started</a>
             </div>
 
-            <!-- MOBILE APPS -->
-            <div class="pricing-card">
-                <div class="tier-label">Mobile Apps</div>
-                <div class="price">From <span>$599</span></div>
-                <p class="price-desc">Android & iOS applications with clean UI/UX.</p>
+            <!-- PROFESSIONAL TIER (Featured) -->
+            <div class="pricing-card featured reveal">
+                <div class="popular-badge">Most Popular</div>
+                <div class="tier-label">Professional</div>
+                <div class="price">From <span>$799</span></div>
+                <p class="price-desc">Advanced solutions for growing businesses</p>
                 <ul class="price-features">
-                    <li><i class="fas fa-check"></i> Native Performance</li>
-                    <li><i class="fas fa-check"></i> Push Notifications</li>
-                    <li><i class="fas fa-check"></i> User Authentication</li>
-                    <li><i class="fas fa-check"></i> Play Store / App Store Ready</li>
+                    <li><i class="fas fa-check"></i> Everything in Startup</li>
+                    <li><i class="fas fa-check"></i> Microservices Architecture</li>
+                    <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
+                    <li><i class="fas fa-check"></i> Cloud Deployment (AWS/Azure/GCP)</li>
+                    <li><i class="fas fa-check"></i> Advanced Security Features</li>
+                    <li><i class="fas fa-check"></i> Real-time Features (WebSockets)</li>
+                    <li><i class="fas fa-check"></i> Performance Optimization</li>
+                    <li><i class="fas fa-check"></i> 6 Months Support</li>
                 </ul>
-                <a href="index.html#contact" class="secondary-btn">Build App</a>
+                <a href="index.html#contact" class="submit-btn">Choose Professional</a>
+            </div>
+
+            <!-- ENTERPRISE TIER -->
+            <div class="pricing-card reveal-right">
+                <div class="tier-label">Enterprise</div>
+                <div class="price">From <span>$1,999</span></div>
+                <p class="price-desc">Complete enterprise-grade solutions</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Everything in Professional</li>
+                    <li><i class="fas fa-check"></i> Multi-cloud Architecture</li>
+                    <li><i class="fas fa-check"></i> Advanced DevOps Pipeline</li>
+                    <li><i class="fas fa-check"></i> Machine Learning Integration</li>
+                    <li><i class="fas fa-check"></i> Advanced Analytics Dashboard</li>
+                    <li><i class="fas fa-check"></i> Enterprise Security (SSO, 2FA)</li>
+                    <li><i class="fas fa-check"></i> 24/7 Monitoring & Support</li>
+                    <li><i class="fas fa-check"></i> Custom SLA Guarantees</li>
+                </ul>
+                <a href="index.html#contact" class="secondary-btn">Contact Sales</a>
             </div>
         </div>
 
-        <!-- CUSTOM REQUESTS -->
-        <section class="glass-card" style="margin-top: 50px; text-align: center;">
-            <h3>Need a Custom System?</h3>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Bots, Discord Integrations, or complex Enterprise Software? Let's talk.</p>
-            <a href="index.html#contact" class="submit-btn" style="width: auto; padding: 15px 50px;">Contact for Custom Quote</a>
+        <!-- SPECIALIZED SERVICES -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Specialized Development Services</h2>
+            <div class="features-grid">
+                <div class="feature-item reveal-left">
+                    <i class="fab fa-java"></i>
+                    <h3>Java Enterprise</h3>
+                    <p>Spring Boot, Microservices, Hibernate, Maven/Gradle builds. Perfect for enterprise applications.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">Microservices</span>
+                        <span class="tech-tag">JPA/Hibernate</span>
+                    </div>
+                </div>
+                <div class="feature-item reveal-left">
+                    <i class="fab fa-python"></i>
+                    <h3>Python Solutions</h3>
+                    <p>Django, FastAPI, Data Science, Machine Learning, and automation scripts.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">TensorFlow</span>
+                    </div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript Full-Stack</h3>
+                    <p>React, Node.js, TypeScript, Vue.js, and modern frontend frameworks.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                    </div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fab fa-golang"></i>
+                    <h3>Go Development</h3>
+                    <p>High-performance microservices, APIs, and concurrent systems.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Gin</span>
+                        <span class="tech-tag">gRPC</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                </div>
+                <div class="feature-item reveal-left">
+                    <i class="fab fa-rust"></i>
+                    <h3>Rust Systems</h3>
+                    <p>Performance-critical applications, WebAssembly, and system programming.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Actix</span>
+                        <span class="tech-tag">Tokio</span>
+                        <span class="tech-tag">WASM</span>
+                    </div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP & Laravel</h3>
+                    <p>Web applications, CMS development, and API integrations.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Laravel</span>
+                        <span class="tech-tag">Symfony</span>
+                        <span class="tech-tag">MySQL</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
+        <!-- MOBILE & GAME DEVELOPMENT -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Mobile & Game Development</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal-left">
+                    <div class="tier-label">Mobile Apps</div>
+                    <div class="price">From <span>$599</span></div>
+                    <p class="price-desc">Native & cross-platform mobile applications</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> React Native / Flutter</li>
+                        <li><i class="fas fa-check"></i> iOS & Android Native</li>
+                        <li><i class="fas fa-check"></i> Push Notifications</li>
+                        <li><i class="fas fa-check"></i> Offline Support</li>
+                        <li><i class="fas fa-check"></i> App Store Deployment</li>
+                    </ul>
+                    <a href="index.html#contact" class="secondary-btn">Build Mobile App</a>
+                </div>
+                <div class="pricing-card reveal-right">
+                    <div class="tier-label">Game Development</div>
+                    <div class="price">From <span>$799</span></div>
+                    <p class="price-desc">Unity, Unreal Engine, and custom game engines</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Unity 3D/2D Games</li>
+                        <li><i class="fas fa-check"></i> Unreal Engine Projects</li>
+                        <li><i class="fas fa-check"></i> Multiplayer Networking</li>
+                        <li><i class="fas fa-check"></i> Custom Game Engines</li>
+                        <li><i class="fas fa-check"></i> Asset Integration</li>
+                    </ul>
+                    <a href="index.html#contact" class="secondary-btn">Start Game Project</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ADD-ON SERVICES -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Add-On Services</h2>
+            <div class="features-grid">
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-database"></i>
+                    <h3>Database Architecture</h3>
+                    <p>Design and optimize database schemas for maximum performance and scalability.</p>
+                    <div class="price-tag">Starting at $199</div>
+                </div>
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Migration</h3>
+                    <p>Seamless migration to cloud platforms with zero downtime.</p>
+                    <div class="price-tag">Starting at $499</div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security Audit</h3>
+                    <p>Comprehensive security analysis and vulnerability assessment.</p>
+                    <div class="price-tag">Starting at $299</div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Performance Optimization</h3>
+                    <p>Speed up your applications with advanced optimization techniques.</p>
+                    <div class="price-tag">Starting at $249</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CUSTOM ENTERPRISE -->
+        <section class="glass-card reveal" style="text-align: center; border-left: 4px solid var(--primary);">
+            <h2 class="section-title">Need Custom Enterprise Solutions?</h2>
+            <p class="section-intro">Complex integrations, legacy system modernization, or specialized requirements? Let's discuss your unique needs.</p>
+            <div class="cta-wrapper">
+                <a href="index.html#contact" class="submit-btn animate-glow">Schedule Consultation</a>
+                <a href="support.html" class="secondary-btn">Talk to Expert</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
         <footer>
-            <p>&copy; 2026 Snufi Coding | developersnufi@gmail.com</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Snufi Coding</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.6;">Premium Software Engineering & Cloud Solutions based in Germany.</p>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="list-style: none; opacity: 0.6; font-size: 0.9rem; line-height: 2;">
+                        <li><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
+                        <li><a href="pricing.html" style="color: inherit; text-decoration: none;">Pricing</a></li>
+                        <li><a href="support.html" style="color: inherit; text-decoration: none;">Support</a></li>
+                        <li><a href="terms.html" style="color: inherit; text-decoration: none;">Terms</a></li>
+                    </ul>
+                </div>
+                <div style="margin-top: 15px; font-size: 1.5rem; display: flex; gap: 20px;">
+                    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+            
+            <p>&copy; 2026 Snufi Coding | Germany</p>
+            <p style="margin-top: 10px;">
+                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint / Legal Notice</a>
+            </p>
         </footer>
     </div>
 
+    <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -3,58 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support | Snufi Coding</title>
+    <title>Support Hub | Snufi Coding - 24/7 Enterprise Support</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    
+    <!-- THEME TOGGLE -->
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <div class="theme-toggle-slider"></div>
+    </div>
+    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="reviews.html">Reviews</a></li>
-            <li><a href="support.html">Support</a></li>
-            <li><a href="terms.html">Terms</a></li>
-            <li style="margin-top: 30px;">
-                <a href="index.html#contact" style="color: #00d4ff; font-weight: bold;">Start Project</a>
-            </li>
+            <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
+            <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
+            <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
+            <li><a href="impressum.html"><i class="fas fa-info-circle"></i> Impressum</a></li>
+            <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()" style="color: var(--primary);"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
     </nav>
 
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <!-- ANIMATED BACKGROUND -->
+    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
     <div class="container">
         <header class="hero-section">
-            <h1 class="section-title">Support Hub</h1>
-            <p class="section-intro">Need help with a project or have technical questions?</p>
+            <h1 class="section-title reveal">24/7 Enterprise Support</h1>
+            <p class="section-intro reveal">Multiple channels for immediate assistance. We're here when you need us.</p>
         </header>
 
+        <!-- SUPPORT CHANNELS -->
         <div class="pricing-grid">
-            <div class="pricing-card" style="border-color: #5865F2;">
+            <div class="pricing-card reveal-left">
                 <i class="fab fa-discord" style="font-size: 3rem; color: #5865F2; margin-bottom: 20px;"></i>
-                <h3>Discord</h3>
-                <p class="price-desc">Join our server for real-time chat and fast tickets.</p>
-                <a href="https://discord.gg/DBqQdQpggs" target="_blank" class="submit-btn" style="background: #5865F2;">Join Server</a>
+                <h3>Discord Community</h3>
+                <p class="price-desc">Join our active community for real-time chat, fast tickets, and developer discussions.</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Real-time Chat Support</li>
+                    <li><i class="fas fa-check"></i> Community Help</li>
+                    <li><i class="fas fa-check"></i> Voice Channels</li>
+                    <li><i class="fas fa-check"></i> Resource Sharing</li>
+                </ul>
+                <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" class="submit-btn" style="background: #5865F2;">Join Discord Server</a>
             </div>
 
-            <div class="pricing-card">
+            <div class="pricing-card reveal-right">
                 <i class="fas fa-envelope" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
-                <h3>Email</h3>
-                <p class="price-desc">For formal inquiries and business documentation.</p>
-                <a href="mailto:developersnufi@gmail.com" class="secondary-btn">Send Mail</a>
+                <h3>Email Support</h3>
+                <p class="price-desc">For formal inquiries, business documentation, and detailed technical support.</p>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> 24-hour Response Time</li>
+                    <li><i class="fas fa-check"></i> Detailed Documentation</li>
+                    <li><i class="fas fa-check"></i> Business Inquiries</li>
+                    <li><i class="fas fa-check"></i> Technical Support</li>
+                </ul>
+                <a href="mailto:developersnufi@gmail.com" class="secondary-btn">Send Email</a>
             </div>
         </div>
 
+        <!-- EMERGENCY SUPPORT -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Emergency Support</h2>
+            <div class="features-grid">
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>Priority Hotline</h3>
+                    <p>For enterprise clients with critical issues requiring immediate attention.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">24/7 Available</span>
+                        <span class="tech-tag">Enterprise Only</span>
+                    </div>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-clock"></i>
+                    <h3>Response Times</h3>
+                    <p>Guaranteed response times based on your support tier and urgency level.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Critical: 1 Hour</span>
+                        <span class="tech-tag">High: 4 Hours</span>
+                        <span class="tech-tag">Normal: 24 Hours</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SUPPORT TIERS -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Support Tiers</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal-left">
+                    <div class="tier-label">Basic</div>
+                    <div class="price">Included</div>
+                    <p class="price-desc">Standard support for all projects</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Email Support</li>
+                        <li><i class="fas fa-check"></i> Discord Community</li>
+                        <li><i class="fas fa-check"></i> 48-hour Response</li>
+                        <li><i class="fas fa-check"></i> Bug Fixes</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card featured reveal">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="tier-label">Professional</div>
+                    <div class="price">$199/month</div>
+                    <p class="price-desc">Enhanced support for growing businesses</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> Priority Email Support</li>
+                        <li><i class="fas fa-check"></i> Private Discord Channel</li>
+                        <li><i class="fas fa-check"></i> 12-hour Response</li>
+                        <li><i class="fas fa-check"></i> Monthly Check-ins</li>
+                        <li><i class="fas fa-check"></i> Performance Monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card reveal-right">
+                    <div class="tier-label">Enterprise</div>
+                    <div class="price">$499/month</div>
+                    <p class="price-desc">Complete support package for enterprise</p>
+                    <ul class="price-features">
+                        <li><i class="fas fa-check"></i> 24/7 Phone Support</li>
+                        <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+                        <li><i class="fas fa-check"></i> 1-hour Critical Response</li>
+                        <li><i class="fas fa-check"></i> On-site Support Available</li>
+                        <li><i class="fas fa-check"></i> Custom SLA</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- KNOWLEDGE BASE -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Self-Service Resources</h2>
+            <div class="features-grid">
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-book"></i>
+                    <h3>Documentation</h3>
+                    <p>Comprehensive guides, API documentation, and best practices for all our technologies.</p>
+                    <a href="#" class="secondary-btn">Browse Docs</a>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-video"></i>
+                    <h3>Video Tutorials</h3>
+                    <p>Step-by-step video guides for common tasks, troubleshooting, and advanced features.</p>
+                    <a href="#" class="secondary-btn">Watch Tutorials</a>
+                </div>
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-code"></i>
+                    <h3>Code Examples</h3>
+                    <p>Ready-to-use code snippets, templates, and starter projects for quick development.</p>
+                    <a href="#" class="secondary-btn">View Examples</a>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-tools"></i>
+                    <h3>Development Tools</h3>
+                    <p>CLI tools, scripts, and utilities to streamline your development workflow.</p>
+                    <a href="#" class="secondary-btn">Download Tools</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ SECTION -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-wrapper">
+                <details class="faq-item reveal-left">
+                    <summary>What's included in basic support?</summary>
+                    <p>Basic support includes email assistance, Discord community access, bug fixes for delivered projects, and 48-hour response times.</p>
+                </details>
+                <details class="faq-item reveal-right">
+                    <summary>How do I upgrade my support tier?</summary>
+                    <p>Contact our sales team through the contact form or email us directly at developersnufi@gmail.com to discuss upgrade options.</p>
+                </details>
+                <details class="faq-item reveal-left">
+                    <summary>Do you offer training for our team?</summary>
+                    <p>Yes! We provide customized training sessions for your development team on technologies we implement.</p>
+                </details>
+                <details class="faq-item reveal-right">
+                    <summary>What constitutes an emergency?</summary>
+                    <p>Emergencies include production downtime, security breaches, data loss, or critical functionality failures affecting your business.</p>
+                </details>
+            </div>
+        </section>
+
+        <!-- CONTACT CTA -->
+        <section class="glass-card reveal" style="text-align: center; border-left: 4px solid var(--primary);">
+            <h2 class="section-title">Still Need Help?</h2>
+            <p class="section-intro">Can't find what you're looking for? Our team is ready to assist you with any questions or concerns.</p>
+            <div class="cta-wrapper">
+                <a href="index.html#contact" class="submit-btn animate-glow">Contact Support Team</a>
+                <a href="pricing.html" class="secondary-btn">View Pricing Plans</a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
         <footer>
-            <p>&copy; 2026 Snufi Coding | developersnufi@gmail.com</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Snufi Coding</h3>
+                    <p style="font-size: 0.9rem; opacity: 0.6;">Premium Software Engineering & Cloud Solutions based in Germany.</p>
+                </div>
+                <div>
+                    <h3 style="color: white; margin-bottom: 20px;">Quick Links</h3>
+                    <ul style="list-style: none; opacity: 0.6; font-size: 0.9rem; line-height: 2;">
+                        <li><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
+                        <li><a href="pricing.html" style="color: inherit; text-decoration: none;">Pricing</a></li>
+                        <li><a href="support.html" style="color: inherit; text-decoration: none;">Support</a></li>
+                        <li><a href="terms.html" style="color: inherit; text-decoration: none;">Terms</a></li>
+                    </ul>
+                </div>
+                <div style="margin-top: 15px; font-size: 1.5rem; display: flex; gap: 20px;">
+                    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+
+            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+            
+            <p>&copy; 2026 Snufi Coding | Germany</p>
             <p style="margin-top: 10px;">
-                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Impressum</a>
+                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint / Legal Notice</a>
             </p>
         </footer>
     </div>
 
+    <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>
 </html>

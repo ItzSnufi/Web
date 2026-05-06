@@ -11,12 +11,19 @@
 
     <!-- NAVIGATION -->
     <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    
+    <!-- THEME TOGGLE -->
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+        <div class="theme-toggle-slider"></div>
+    </div>
+    
     <nav class="sidebar" id="sidebar">
         <ul class="nav-links">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
             <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
+            <li><a href="impressum.html"><i class="fas fa-info-circle"></i> Impressum</a></li>
             <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
             <li><a href="#contact" onclick="toggleMenu()" style="color: var(--primary);"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
@@ -24,6 +31,12 @@
 
     <!-- ANIMATED BACKGROUND -->
     <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
+    <div class="particles" id="particles"></div>
+    
+    <!-- LOADING OVERLAY -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
 
     <div class="container">
         <!-- HERO SECTION -->
@@ -43,47 +56,48 @@
 
         <main>
             <!-- CORE VALUES / STATS -->
-            <section class="glass-card">
+            <section class="glass-card reveal">
+                <h2 class="section-title">Trusted by Industry Leaders</h2>
                 <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); text-align: center;">
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;">99.9%</h2>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">99.9%</h2>
                         <p style="font-size: 0.8rem; opacity: 0.7;">Uptime SLA</p>
                     </div>
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;">24/7</h2>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">24/7</h2>
                         <p style="font-size: 0.8rem; opacity: 0.7;">Expert Support</p>
                     </div>
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;">15+</h2>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">15+</h2>
                         <p style="font-size: 0.8rem; opacity: 0.7;">Tech Stacks</p>
                     </div>
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;">Zero</h2>
+                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">Zero</h2>
                         <p style="font-size: 0.8rem; opacity: 0.7;">Security Breaches</p>
                     </div>
                 </div>
             </section>
 
             <!-- DETAILED SERVICES -->
-            <section class="glass-card">
+            <section class="glass-card reveal">
                 <h2 class="section-title">Our Specialized Services</h2>
                 <div class="features-grid">
-                    <div class="feature-item">
+                    <div class="feature-item reveal-left">
                         <i class="fas fa-layer-group"></i>
                         <h3>Full-Stack Development</h3>
                         <p>End-to-end development of web and mobile applications using the latest frameworks like React and Spring Boot.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item reveal-left">
                         <i class="fas fa-database"></i>
                         <h3>Big Data & Analytics</h3>
                         <p>Architecting robust data pipelines and real-time processing systems for data-driven decision making.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item reveal-right">
                         <i class="fas fa-project-diagram"></i>
                         <h3>API Design & Integration</h3>
                         <p>Building secure, well-documented RESTful and GraphQL APIs to connect your services globally.</p>
                     </div>
-                    <div class="feature-item">
+                    <div class="feature-item reveal-right">
                         <i class="fas fa-server"></i>
                         <h3>Managed Cloud Hosting</h3>
                         <p>Fully managed infrastructure with automated backups, load balancing, and global CDN integration.</p>
@@ -92,70 +106,70 @@
             </section>
 
             <!-- TECH STACK (EXTENDED) -->
-            <section class="glass-card">
+            <section class="glass-card reveal">
                 <h2 class="section-title">The Technical Ecosystem</h2>
                 <div class="tech-group">
                     <h3 style="color:var(--primary); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px;">CORE LANGUAGES & SYSTEMS</h3>
                     <div class="skills-grid">
-                        <div class="skill-item"><i class="fab fa-java"></i> Java / Spring Ecosystem</div>
-                        <div class="skill-item"><i class="fab fa-python"></i> Python / Data Science</div>
-                        <div class="skill-item"><i class="fab fa-golang"></i> Go / Microservices</div>
-                        <div class="skill-item"><i class="fas fa-terminal"></i> Rust / Performance Core</div>
-                        <div class="skill-item"><i class="fab fa-node-js"></i> Node.js / TypeScript</div>
-                        <div class="skill-item"><i class="fas fa-database"></i> PostgreSQL / Redis</div>
+                        <div class="skill-item reveal-left"><i class="fab fa-java"></i> Java / Spring Ecosystem</div>
+                        <div class="skill-item reveal-left"><i class="fab fa-python"></i> Python / Data Science</div>
+                        <div class="skill-item reveal-left"><i class="fab fa-golang"></i> Go / Microservices</div>
+                        <div class="skill-item reveal-right"><i class="fas fa-terminal"></i> Rust / Performance Core</div>
+                        <div class="skill-item reveal-right"><i class="fab fa-node-js"></i> Node.js / TypeScript</div>
+                        <div class="skill-item reveal-right"><i class="fas fa-database"></i> PostgreSQL / Redis</div>
                     </div>
                 </div>
                 <div class="tech-group" style="margin-top: 40px;">
                     <h3 style="color:var(--primary); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px;">MODERN FRONTEND ARCHITECTURE</h3>
                     <div class="skills-grid">
-                        <div class="skill-item"><i class="fab fa-react"></i> React / Next.js</div>
-                        <div class="skill-item"><i class="fab fa-vuejs"></i> Vue.js / Nuxt</div>
-                        <div class="skill-item"><i class="fab fa-angular"></i> Angular Enterprise</div>
-                        <div class="skill-item"><i class="fab fa-sass"></i> SCSS / Tailwind CSS</div>
+                        <div class="skill-item reveal-left"><i class="fab fa-react"></i> React / Next.js</div>
+                        <div class="skill-item reveal-left"><i class="fab fa-vuejs"></i> Vue.js / Nuxt</div>
+                        <div class="skill-item reveal-right"><i class="fab fa-angular"></i> Angular Enterprise</div>
+                        <div class="skill-item reveal-right"><i class="fab fa-sass"></i> SCSS / Tailwind CSS</div>
                     </div>
                 </div>
             </section>
 
             <!-- WORKFLOW STEPS (DETAILED) -->
-            <section class="glass-card">
+            <section class="glass-card reveal">
                 <h2 class="section-title">The Engineering Journey</h2>
                 <div class="workflow-steps">
-                    <div class="workflow-step">
+                    <div class="workflow-step reveal-left">
                         <div class="step-number">01</div>
                         <div class="step-content">
                             <h3>Discovery</h3>
                             <p>We analyze your business goals and technical requirements to create a solid roadmap.</p>
                         </div>
                     </div>
-                    <div class="workflow-step">
+                    <div class="workflow-step reveal-right">
                         <div class="step-number">02</div>
                         <div class="step-content">
                             <h3>Architecture</h3>
                             <p>Designing a scalable system architecture that handles future growth and high traffic.</p>
                         </div>
                     </div>
-                    <div class="workflow-step">
+                    <div class="workflow-step reveal-left">
                         <div class="step-number">03</div>
                         <div class="step-content">
                             <h3>Development</h3>
                             <p>Clean code implementation in agile sprints with continuous feedback loops.</p>
                         </div>
                     </div>
-                    <div class="workflow-step">
+                    <div class="workflow-step reveal-right">
                         <div class="step-number">04</div>
                         <div class="step-content">
                             <h3>Security Audit</h3>
                             <p>Rigorous penetration testing and code reviews to ensure maximum data protection.</p>
                         </div>
                     </div>
-                    <div class="workflow-step">
+                    <div class="workflow-step reveal-left">
                         <div class="step-number">05</div>
                         <div class="step-content">
                             <h3>Deployment</h3>
                             <p>Automated CI/CD pipelines ensure a smooth transition to production environments.</p>
                         </div>
                     </div>
-                    <div class="workflow-step">
+                    <div class="workflow-step reveal-right">
                         <div class="step-number">06</div>
                         <div class="step-content">
                             <h3>Maintenance</h3>
@@ -166,24 +180,24 @@
             </section>
 
             <!-- SECURITY & COMPLIANCE -->
-            <section class="glass-card" style="border-left: 4px solid #10b981;">
+            <section class="glass-card reveal" style="border-left: 4px solid #10b981;">
                 <h2 class="section-title"><i class="fas fa-user-shield"></i> Security First</h2>
                 <p>All our projects follow the <strong>OWASP Top 10</strong> security guidelines. We implement end-to-end encryption, multi-factor authentication, and regular automated security patches for every deployment.</p>
             </section>
 
             <!-- FAQ SECTION -->
-            <section class="glass-card">
+            <section class="glass-card reveal">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-wrapper">
-                    <details class="faq-item">
+                    <details class="faq-item reveal-left">
                         <summary>What industries do you specialize in?</summary>
                         <p>We focus on E-commerce, Fintech, SaaS platforms, and high-performance gaming backends.</p>
                     </details>
-                    <details class="faq-item">
+                    <details class="faq-item reveal-right">
                         <summary>How do you handle IP and source code ownership?</summary>
                         <p>Upon final payment, 100% of the intellectual property and source code rights are transferred to you.</p>
                     </details>
-                    <details class="faq-item">
+                    <details class="faq-item reveal-left">
                         <summary>Can you join an existing development team?</summary>
                         <p>Yes, we offer staff augmentation services to support your in-house engineers with specialized knowledge.</p>
                     </details>
@@ -191,7 +205,7 @@
             </section>
 
             <!-- CONTACT FORM -->
-            <section id="contact" class="glass-card contact-section">
+            <section id="contact" class="glass-card contact-section reveal">
                 <h2 class="section-title">Start Your Project</h2>
                 <p class="section-intro">Fill out the form below to receive a custom technical breakdown and fixed-price quote.</p>
                 <form action="https://formsubmit.co/developersnufi@gmail.com" method="POST" id="mainForm">
@@ -200,17 +214,17 @@
                     <input type="hidden" name="_subject" value="New Enterprise Lead - Snufi Coding">
                     
                     <div class="form-group-row">
-                        <input type="text" name="name" placeholder="Contact Person" required>
-                        <input type="email" name="email" placeholder="Business Email Address" required>
+                        <input type="text" name="name" placeholder="Contact Person" required class="reveal-left">
+                        <input type="email" name="email" placeholder="Business Email Address" required class="reveal-right">
                     </div>
                     <div class="form-group-row">
-                        <input type="text" name="company" placeholder="Company Name">
-                        <input type="text" name="budget" placeholder="Approx. Budget (Optional)">
-                        <input type="text" name="Code" placeholder="If you have a promo code or a referral code, write it in here (Optional)">
-                        <input type="text" name="Service" placeholder="Type your desired service here, e.g., Web Service">
+                        <input type="text" name="company" placeholder="Company Name" class="reveal-left">
+                        <input type="text" name="budget" placeholder="Approx. Budget (Optional)" class="reveal-right">
+                        <input type="text" name="Code" placeholder="If you have a promo code or a referral code, write it in here (Optional)" class="reveal-left">
+                        <input type="text" name="Service" placeholder="Type your desired service here, e.g., Web Service" class="reveal-right">
                     </div>
-                    <textarea name="message" placeholder="Please provide details about your project, current challenges, and desired launch date..." rows="6" required></textarea>
-                    <button type="submit" class="submit-btn">Submit Proposal Request</button>
+                    <textarea name="message" placeholder="Please provide details about your project, current challenges, and desired launch date..." rows="6" required class="reveal"></textarea>
+                    <button type="submit" class="submit-btn animate-glow">Submit Proposal Request</button>
                 </form>
             </section>
         </main>
@@ -233,17 +247,17 @@
                 </div>
                 <div style="margin-top: 15px; font-size: 1.5rem; display: flex; gap: 20px;">
                 <!-- GitHub -->
-    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;">
+    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
         <i class="fab fa-github"></i>
     </a>
     
     <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;">
+    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
         <i class="fab fa-linkedin"></i>
     </a>
     
     <!-- Discord -->
-    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;">
+    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
         <i class="fab fa-discord"></i>
     </a>
 </div>
@@ -252,7 +266,7 @@
             
             <p>&copy; 2026 Snufi Coding | Germany</p>
             <p style="margin-top: 10px;">
-                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint / Legal Notice</a>
+                <a href="file:///C:/Users/isist/Downloads/Web/impressum.html" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint / Legal Notice</a>
             </p>
             
             <!-- Page Visit Counter -->
@@ -264,6 +278,16 @@
             </div>
             <p style="font-size: 0.7rem; opacity: 0.3; margin-top: 20px;">All rights reserved. Managed Cloud Hosting & Dedicated Engineering Support.</p>
         </footer>
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="thanks-modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle" style="font-size: 4rem; color: #10b981; margin-bottom: 20px;"></i>
+            <h2 style="color: var(--primary); margin-bottom: 15px;">Thank You!</h2>
+            <p style="color: var(--text-muted); margin-bottom: 20px;">Your project request has been successfully submitted. Our team will contact you within 24 hours with a detailed proposal.</p>
+            <button onclick="closeModal()" class="submit-btn">Got it!</button>
+        </div>
     </div>
 
     <!-- SCRIPTS -->
