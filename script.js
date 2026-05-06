@@ -250,7 +250,9 @@ if (contactForm) {
         // Add progress animation
         showProgressIndicator();
 
-        fetch(this.action, {
+        const submitUrl = this.action.includes('/ajax/') ? this.action : this.action.replace(/^https:\/\/formsubmit\.co\//, 'https://formsubmit.co/ajax/');
+
+        fetch(submitUrl, {
             method: 'POST',
             body: formData,
             headers: {
