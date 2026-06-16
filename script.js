@@ -239,6 +239,22 @@ window.closeModal = function () {
 
     const submitBtn = $('button[type="submit"]', form);
     const originalHTML = submitBtn ? submitBtn.innerHTML : '';
+    const serviceSelect = $('#serviceSelect');
+    const otherRequestGroup = $('#otherRequestGroup');
+    const otherRequestInput = otherRequestGroup ? otherRequestGroup.querySelector('input, textarea') : null;
+
+    function updateOtherRequestField() {
+      if (!serviceSelect || !otherRequestGroup || !otherRequestInput) return;
+      const isOther = serviceSelect.value === 'Other';
+      otherRequestGroup.style.display = isOther ? 'block' : 'none';
+      otherRequestInput.required = isOther;
+      if (!isOther) otherRequestInput.value = '';
+    }
+
+    if (serviceSelect) {
+      serviceSelect.addEventListener('change', updateOtherRequestField);
+      updateOtherRequestField();
+    }
 
     form.addEventListener('submit', async function (e) {
       e.preventDefault();
@@ -329,12 +345,20 @@ window.closeModal = function () {
     document.body.style.overflow = 'hidden';
 
     // Auto-close
-    setTimeout(window.closeModal, 5000);
+    setTimeout(() => {
+      if (modal.classList.contains('active')) window.closeModal();
+    }, 5000);
   }
 
   // Close modal on backdrop click
   document.addEventListener('click', (e) => {
     if (e.target && e.target.id === 'thanks-modal') {
+      window.closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && $('#thanks-modal')?.classList.contains('active')) {
       window.closeModal();
     }
   });

@@ -243,9 +243,13 @@ a {
 
 /* --- HERO SECTION --- */
 .hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 100px 0 60px;
   position: relative;
+  gap: 20px;
 }
 
 .logo {
@@ -304,9 +308,12 @@ a {
 
 .cta-wrapper {
   display: flex;
+  flex-direction: column;
   gap: 16px;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
   opacity: 0;
   animation: fadeUp 0.8s ease-out 1s forwards;
 }
@@ -956,6 +963,14 @@ form textarea::placeholder {
 
 .form-group-row input {
   margin-bottom: 0;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group.other-request-group {
+  display: block;
 }
 
 form textarea {
