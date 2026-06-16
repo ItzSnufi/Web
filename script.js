@@ -2,8 +2,6 @@
  * Snufi Coding - Premium Interactive Experience 2.0
  * Performance-optimized | GPU-accelerated | Accessible
  */
-
-// Global functions (accessible from onclick handlers in HTML)
 window.toggleMenu = function () {
   const sidebar = document.getElementById('sidebar');
   const menuBtn = document.querySelector('.menu-btn');
@@ -41,9 +39,6 @@ window.closeModal = function () {
 (function () {
   'use strict';
 
-  // =============================================
-  // UTILITIES
-  // =============================================
   const $ = (sel, ctx = document) => ctx.querySelector(sel);
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -65,10 +60,6 @@ window.closeModal = function () {
       timer = setTimeout(() => fn.apply(this, args), ms);
     };
   }
-
-  // =============================================
-  // LOADING SCREEN
-  // =============================================
   function initLoadingScreen() {
     const overlay = $('#loadingOverlay');
     if (!overlay) return;
@@ -83,10 +74,6 @@ window.closeModal = function () {
     // Always hide quickly - don't block user interaction
     setTimeout(hide, 400);
   }
-
-  // =============================================
-  // SCROLL REVEAL (IntersectionObserver)
-  // =============================================
   function initScrollReveal() {
     const els = $$('.reveal, .reveal-left, .reveal-right');
     if (!els.length) return;
@@ -114,10 +101,6 @@ window.closeModal = function () {
 
     els.forEach((el) => observer.observe(el));
   }
-
-  // =============================================
-  // COUNTER ANIMATION
-  // =============================================
   function initCounters() {
     const counters = $$('.stat-item h2');
     if (!counters.length) return;
@@ -162,10 +145,6 @@ window.closeModal = function () {
 
     requestAnimationFrame(update);
   }
-
-  // =============================================
-  // SIDEBAR NAVIGATION
-  // =============================================
   function initSidebar() {
     const menuBtn = $('.menu-btn');
     const sidebar = $('#sidebar');
@@ -199,10 +178,6 @@ window.closeModal = function () {
       }
     });
   }
-
-  // =============================================
-  // THEME TOGGLE
-  // =============================================
   function initTheme() {
     const saved = localStorage.getItem('snufi-theme') || 'dark';
     if (saved === 'light') {
@@ -211,10 +186,6 @@ window.closeModal = function () {
       if (toggle) toggle.classList.add('dark');
     }
   }
-
-  // =============================================
-  // SMOOTH SCROLL
-  // =============================================
   function initSmoothScroll() {
     $$('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', function (e) {
@@ -229,10 +200,6 @@ window.closeModal = function () {
       });
     });
   }
-
-  // =============================================
-  // CONTACT FORM (100% reliable)
-  // =============================================
   function initContactForm() {
     const form = $('#mainForm');
     if (!form) return;
@@ -334,10 +301,6 @@ window.closeModal = function () {
       );
     });
   }
-
-  // =============================================
-  // MODAL
-  // =============================================
   function openModal() {
     const modal = $('#thanks-modal');
     if (!modal) return;
@@ -362,10 +325,6 @@ window.closeModal = function () {
       window.closeModal();
     }
   });
-
-  // =============================================
-  // PROGRESS BAR
-  // =============================================
   function showProgressBar() {
     const bar = document.createElement('div');
     bar.className = 'progress-indicator';
@@ -378,10 +337,6 @@ window.closeModal = function () {
     const bar = $('#activeProgress');
     if (bar) bar.remove();
   }
-
-  // =============================================
-  // ERROR NOTIFICATION
-  // =============================================
   function showError(message) {
     const el = document.createElement('div');
     el.className = 'error-notification';
@@ -390,10 +345,6 @@ window.closeModal = function () {
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 5000);
   }
-
-  // =============================================
-  // CONFETTI
-  // =============================================
   function spawnConfetti() {
     const colors = ['#00e5ff', '#6c3cff', '#10b981', '#f59e0b'];
     const fragment = document.createDocumentFragment();
@@ -415,10 +366,6 @@ window.closeModal = function () {
       $$('.confetti').forEach((c) => c.remove());
     }, 3500);
   }
-
-  // =============================================
-  // RIPPLE EFFECT
-  // =============================================
   function createRipple(e, el) {
     const ripple = document.createElement('span');
     const rect = el.getBoundingClientRect();
@@ -431,10 +378,6 @@ window.closeModal = function () {
     el.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
   }
-
-  // =============================================
-  // KEYBOARD SHORTCUTS
-  // =============================================
   function initKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
       // Ctrl/Cmd + K = toggle menu
@@ -449,10 +392,6 @@ window.closeModal = function () {
       }
     });
   }
-
-  // =============================================
-  // HERO PARALLAX (Desktop only, throttled)
-  // =============================================
   function initParallax() {
     if (window.innerWidth < 768) return;
 
@@ -473,19 +412,11 @@ window.closeModal = function () {
       }, 16)
     );
   }
-
-  // =============================================
-  // TOUCH DEVICE DETECTION
-  // =============================================
   function initTouchDevice() {
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
       document.body.classList.add('touch-device');
     }
   }
-
-  // =============================================
-  // PAGE TRANSITIONS
-  // =============================================
   function initPageTransitions() {
     const overlay = document.createElement('div');
     overlay.className = 'page-transition';
@@ -507,10 +438,6 @@ window.closeModal = function () {
       });
     });
   }
-
-  // =============================================
-  // SOCIAL LINK HOVER
-  // =============================================
   function initSocialLinks() {
     $$('.social-link').forEach((link) => {
       link.addEventListener('mouseenter', () => {
@@ -523,10 +450,6 @@ window.closeModal = function () {
       });
     });
   }
-
-  // =============================================
-  // INITIALIZATION
-  // =============================================
   document.addEventListener('DOMContentLoaded', () => {
     initLoadingScreen();
     initScrollReveal();

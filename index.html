@@ -6,7 +6,6 @@
     <meta name="description" content="Snufi Coding - Enterprise Software Engineering. We build scalable, secure, and high-performance applications for ambitious businesses.">
     <meta name="theme-color" content="#06080d">
     <title>Snufi Coding | Enterprise Software Engineering</title>
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,11 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-    <!-- NAVIGATION -->
     <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation"><span></span><span></span><span></span></div>
-    
-    <!-- THEME TOGGLE -->
     <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <div class="theme-toggle-slider"></div>
     </div>
@@ -34,20 +29,15 @@
             <li><a href="#contact" onclick="toggleMenu()"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
     </nav>
-
-    <!-- ANIMATED BACKGROUND (GPU-accelerated CSS only) -->
     <div class="bg-mesh"></div>
     <div class="bg-orb bg-orb--1"></div>
     <div class="bg-orb bg-orb--2"></div>
     <div class="bg-orb bg-orb--3"></div>
-    
-    <!-- LOADING OVERLAY -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
     </div>
 
     <div class="container">
-        <!-- HERO SECTION -->
         <header class="hero-section">
             <div class="logo">Snufi<span>Coding</span></div>
             <p class="subtitle">Next-Generation Software Solutions</p>
@@ -63,7 +53,6 @@
         </header>
 
         <main>
-            <!-- CORE VALUES / STATS -->
             <section class="glass-card reveal">
                 <h2 class="section-title">Trusted by Industry Leaders</h2>
                 <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); text-align: center;">
@@ -85,8 +74,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- DETAILED SERVICES -->
             <section class="glass-card reveal">
                 <h2 class="section-title">Our Specialized Services</h2>
                 <div class="features-grid">
@@ -112,8 +99,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- TECH STACK (EXTENDED) -->
             <section class="glass-card reveal">
                 <h2 class="section-title">The Technical Ecosystem</h2>
                 <div class="tech-group">
@@ -144,8 +129,6 @@
                     </div>
                 </div>
             </section>
-
-            <!-- WORKFLOW STEPS (DETAILED) -->
             <section class="glass-card reveal">
                 <h2 class="section-title">The Engineering Journey</h2>
                 <div class="workflow-steps">
@@ -193,14 +176,10 @@
                     </div>
                 </div>
             </section>
-
-            <!-- SECURITY & COMPLIANCE -->
             <section class="glass-card reveal" style="border-left: 3px solid #10b981;">
                 <h2 class="section-title"><i class="fas fa-user-shield"></i> Security First</h2>
                 <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">All our projects follow the <strong style="color: var(--text);">OWASP Top 10</strong> security guidelines. We implement end-to-end encryption, multi-factor authentication, and regular automated security patches for every deployment.</p>
             </section>
-
-            <!-- FAQ SECTION -->
             <section class="glass-card reveal">
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-wrapper">
@@ -218,8 +197,6 @@
                     </details>
                 </div>
             </section>
-
-            <!-- CONTACT FORM -->
             <section id="contact" class="glass-card contact-section reveal">
                 <h2 class="section-title">Start Your Project</h2>
                 <p class="section-intro">Fill out the form below to receive a custom technical breakdown and fixed-price quote.</p>
@@ -277,8 +254,6 @@
                 </form>
             </section>
         </main>
-
-        <!-- FOOTER -->
         <footer>
             <div class="footer-grid">
                 <div>
@@ -305,10 +280,7 @@
             </div>
 
             <hr>
-            
             <p class="copyright">&copy; 2026 Snufi Coding | Germany</p>
-            
-            <!-- Page Visit Counter -->
             <div class="footer-counter">
                 <span>Live Traffic:</span>
                 <div class="counter-badge">
@@ -318,8 +290,6 @@
             <p class="footer-legal">All rights reserved. Managed Cloud Hosting & Dedicated Engineering Support.</p>
         </footer>
     </div>
-
-    <!-- MODAL -->
     <div class="modal-overlay" id="thanks-modal">
         <div class="modal-content">
             <div class="modal-icon-wrapper">
@@ -335,8 +305,6 @@
             <button onclick="closeModal()" class="submit-btn">Awesome, Got it!</button>
         </div>
     </div>
-
-    <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>
 </html>
