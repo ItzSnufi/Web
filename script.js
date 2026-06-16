@@ -244,6 +244,7 @@ window.closeModal = function () {
         openModal();
         spawnConfetti();
         form.reset();
+        updateOtherRequestField();
       } catch (err) {
         console.error('Modal error:', err);
       }
