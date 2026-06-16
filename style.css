@@ -9,15 +9,15 @@
   --danger: #ef4444;
   --bg: #06080d;
   --bg-elevated: #0c1018;
-  --card: rgba(12, 16, 24, 0.85);
-  --card-hover: rgba(16, 22, 32, 0.92);
+  --card: rgba(12, 16, 24, 0.16);
+  --card-hover: rgba(16, 22, 32, 0.24);
   --text: #f0f4f8;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-hover: rgba(255, 255, 255, 0.06);
-  --border: rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(0, 229, 255, 0.25);
+  --text-secondary: rgba(240, 244, 248, 0.78);
+  --text-muted: rgba(148, 163, 184, 0.85);
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(0, 229, 255, 0.12);
   --gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
   --gradient-subtle: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(108, 60, 255, 0.1));
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
@@ -104,10 +104,10 @@ a {
   width: 200%;
   height: 200%;
   background:
-    radial-gradient(ellipse 600px 600px at 20% 30%, rgba(0, 229, 255, 0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 500px 500px at 80% 70%, rgba(108, 60, 255, 0.05) 0%, transparent 70%),
-    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(16, 185, 129, 0.03) 0%, transparent 70%);
-  animation: meshFloat 25s ease-in-out infinite alternate;
+    radial-gradient(ellipse 700px 700px at 20% 30%, rgba(0, 229, 255, 0.035) 0%, transparent 65%),
+    radial-gradient(ellipse 650px 650px at 80% 70%, rgba(108, 60, 255, 0.03) 0%, transparent 65%),
+    radial-gradient(ellipse 520px 520px at 50% 50%, rgba(16, 185, 129, 0.02) 0%, transparent 65%);
+  animation: meshFloat 32s ease-in-out infinite alternate;
   will-change: transform;
 }
 
@@ -122,8 +122,8 @@ a {
 .bg-orb {
   position: fixed;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
+  filter: blur(100px);
+  opacity: 0.22;
   pointer-events: none;
   z-index: -1;
   will-change: transform;
@@ -186,17 +186,18 @@ a {
   border-radius: var(--radius-xl);
   padding: 56px;
   margin-bottom: 52px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth), background var(--transition-smooth);
   will-change: transform;
   contain: content;
 }
 
 .glass-card:hover {
   transform: translateY(-3px);
-  border-color: var(--border-hover);
-  box-shadow: var(--shadow-glow);
+  background: rgba(16, 22, 32, 0.22);
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 14px 46px rgba(0, 229, 255, 0.12);
 }
 
 .section-title {
@@ -233,7 +234,7 @@ a {
   text-align: center;
   padding: 100px 0 60px;
   position: relative;
-  gap: 20px;
+  gap: 18px;
 }
 
 .logo {
@@ -272,20 +273,20 @@ a {
 .subtitle {
   letter-spacing: 8px;
   text-transform: uppercase;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  margin-bottom: 28px;
-  opacity: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(240, 244, 248, 0.78);
+  margin-bottom: 22px;
+  opacity: 1;
   animation: fadeUp 0.8s ease-out 0.4s forwards;
 }
 
 .hero-description {
-  color: var(--text-secondary);
+  color: rgba(240, 244, 248, 0.7);
   font-size: clamp(1.1rem, 2vw, 1.35rem);
   max-width: 700px;
   margin: 0 auto 40px;
-  opacity: 0;
+  opacity: 1;
   animation: fadeUp 0.8s ease-out 0.7s forwards;
   line-height: 1.8;
 }
@@ -820,8 +821,8 @@ a {
 
 form input {
   width: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   padding: 16px 20px;
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -850,20 +851,20 @@ form textarea:focus {
 
 form input::placeholder,
 form textarea::placeholder {
-  color: var(--text-muted);
+  color: rgba(148, 163, 184, 0.7);
 }
 
 .service-select {
   width: 100%;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: var(--radius-sm);
   color: var(--text);
   font-family: inherit;
   font-size: 0.95rem;
   padding: 16px 20px;
   padding-right: 44px;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
   outline: none;
   cursor: pointer;
   appearance: none;
@@ -935,9 +936,22 @@ form textarea::placeholder {
 }
 
 form textarea {
+  display: block;
+  width: 100%;
   margin-top: 16px;
   resize: vertical;
-  min-height: 140px;
+  min-height: 220px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  padding: 18px 20px;
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+  outline: none;
+  box-sizing: border-box;
 }
 
 .modal-overlay {
@@ -2127,6 +2141,22 @@ section[style*="border-left: 3px solid var(--primary)"]::before {
 /* Stat counter glow */
 .stat-item:hover h2 {
   text-shadow: 0 0 20px var(--primary-glow);
+}
+
+#cursorLight {
+  position: fixed;
+  width: 96px;
+  height: 96px;
+  margin-left: -48px;
+  margin-top: -48px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.35) 0%, rgba(0, 229, 255, 0.16) 25%, rgba(0, 229, 255, 0.06) 45%, transparent 65%);
+  box-shadow: 0 0 40px rgba(0, 229, 255, 0.18), inset 0 0 18px rgba(255, 255, 255, 0.15);
+  mix-blend-mode: screen;
 }
 
 @media print {
