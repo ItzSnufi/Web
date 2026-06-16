@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Snufi Coding Pricing - Enterprise software development plans for startups, professionals, and enterprises.">
+    <meta name="theme-color" content="#06080d">
     <title>Pricing | Snufi Coding - Enterprise Software Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- NAVIGATION -->
-    <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation"><span></span><span></span><span></span></div>
     
-    <!-- THEME TOGGLE -->
-    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <div class="theme-toggle-slider"></div>
     </div>
     
@@ -24,16 +28,17 @@
             <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
             <li><a href="impressum.html"><i class="fas fa-info-circle"></i> Legal Notice</a></li>
-            <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
-            <li><a href="index.html#contact" onclick="toggleMenu()" style="color: var(--primary);"><i class="fas fa-rocket"></i> Start Project</a></li>
+            <li><hr></li>
+            <li><a href="index.html#contact" onclick="toggleMenu()"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
     </nav>
 
     <!-- ANIMATED BACKGROUND -->
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
-    <div class="particles" id="particles"></div>
+    <div class="bg-mesh"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
     
-    <!-- LOADING OVERLAY -->
     <div class="loading-overlay" id="loadingOverlay">
         <div class="loading-spinner"></div>
     </div>
@@ -44,45 +49,45 @@
             <p class="section-intro reveal">Comprehensive solutions for every scale. From startups to enterprise systems.</p>
         </header>
 
-        <!-- STARTUP TIER -->
+        <!-- MAIN PRICING PLANS -->
         <div class="pricing-grid">
-            <div class="pricing-card reveal-left">
-                <div class="tier-label">Startup</div>
+            <!-- STARTUP -->
+            <div class="pricing-card reveal-left" style="animation-delay: 0.1s;">
+                <div class="tier-label">Starter</div>
                 <div class="price">From <span>$299</span></div>
-                <p class="price-desc">Perfect for startups and small businesses</p>
+                <p class="price-desc">Perfect for MVPs and small business sites</p>
                 <ul class="price-features">
-                    <li><i class="fas fa-check"></i> Modern Web Applications</li>
-                    <li><i class="fas fa-check"></i> React/Vue/Angular Frontend</li>
+                    <li><i class="fas fa-check"></i> Single-page or Landing Page</li>
+                    <li><i class="fas fa-check"></i> React/Vue Frontend</li>
                     <li><i class="fas fa-check"></i> Node.js/Python Backend</li>
-                    <li><i class="fas fa-check"></i> PostgreSQL/MongoDB Database</li>
-                    <li><i class="fas fa-check"></i> RESTful API Development</li>
-                    <li><i class="fas fa-check"></i> Basic CI/CD Pipeline</li>
-                    <li><i class="fas fa-check"></i> 3 Months Support</li>
+                    <li><i class="fas fa-check"></i> Contact Form Integration</li>
+                    <li><i class="fas fa-check"></i> Basic SEO Setup</li>
+                    <li><i class="fas fa-check"></i> 1 Month Support</li>
                 </ul>
                 <a href="index.html#contact" class="secondary-btn">Get Started</a>
             </div>
 
-            <!-- PROFESSIONAL TIER (Featured) -->
-            <div class="pricing-card featured reveal">
+            <!-- PROFESSIONAL (Featured) -->
+            <div class="pricing-card featured reveal" style="animation-delay: 0.2s;">
                 <div class="popular-badge">Most Popular</div>
                 <div class="tier-label">Professional</div>
                 <div class="price">From <span>$799</span></div>
                 <p class="price-desc">Advanced solutions for growing businesses</p>
                 <ul class="price-features">
-                    <li><i class="fas fa-check"></i> Everything in Startup</li>
+                    <li><i class="fas fa-check"></i> Full-stack Web Application</li>
                     <li><i class="fas fa-check"></i> Microservices Architecture</li>
                     <li><i class="fas fa-check"></i> Docker & Kubernetes</li>
                     <li><i class="fas fa-check"></i> Cloud Deployment (AWS/Azure/GCP)</li>
-                    <li><i class="fas fa-check"></i> Advanced Security Features</li>
+                    <li><i class="fas fa-check"></i> CI/CD Pipeline Setup</li>
                     <li><i class="fas fa-check"></i> Real-time Features (WebSockets)</li>
                     <li><i class="fas fa-check"></i> Performance Optimization</li>
-                    <li><i class="fas fa-check"></i> 6 Months Support</li>
+                    <li><i class="fas fa-check"></i> 3 Months Support</li>
                 </ul>
                 <a href="index.html#contact" class="submit-btn">Choose Professional</a>
             </div>
 
-            <!-- ENTERPRISE TIER -->
-            <div class="pricing-card reveal-right">
+            <!-- ENTERPRISE -->
+            <div class="pricing-card reveal-right" style="animation-delay: 0.3s;">
                 <div class="tier-label">Enterprise</div>
                 <div class="price">From <span>$1,999</span></div>
                 <p class="price-desc">Complete enterprise-grade solutions</p>
@@ -91,7 +96,7 @@
                     <li><i class="fas fa-check"></i> Multi-cloud Architecture</li>
                     <li><i class="fas fa-check"></i> Advanced DevOps Pipeline</li>
                     <li><i class="fas fa-check"></i> Machine Learning Integration</li>
-                    <li><i class="fas fa-check"></i> Advanced Analytics Dashboard</li>
+                    <li><i class="fas fa-check"></i> Analytics Dashboard</li>
                     <li><i class="fas fa-check"></i> Enterprise Security (SSO, 2FA)</li>
                     <li><i class="fas fa-check"></i> 24/7 Monitoring & Support</li>
                     <li><i class="fas fa-check"></i> Custom SLA Guarantees</li>
@@ -100,69 +105,75 @@
             </div>
         </div>
 
-        <!-- SPECIALIZED SERVICES -->
+        <!-- SPECIALIZED DEVELOPMENT SERVICES -->
         <section class="glass-card reveal">
             <h2 class="section-title">Specialized Development Services</h2>
             <div class="features-grid">
                 <div class="feature-item reveal-left">
                     <i class="fab fa-java"></i>
                     <h3>Java Enterprise</h3>
-                    <p>Spring Boot, Microservices, Hibernate, Maven/Gradle builds. Perfect for enterprise applications.</p>
+                    <p>Spring Boot, Microservices, Hibernate, Maven/Gradle builds.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Spring Boot</span>
                         <span class="tech-tag">Microservices</span>
                         <span class="tech-tag">JPA/Hibernate</span>
                     </div>
+                    <div class="price-tag">From $599</div>
                 </div>
-                <div class="feature-item reveal-left">
+                <div class="feature-item reveal-right">
                     <i class="fab fa-python"></i>
                     <h3>Python Solutions</h3>
-                    <p>Django, FastAPI, Data Science, Machine Learning, and automation scripts.</p>
+                    <p>Django, FastAPI, Data Science, Machine Learning.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Django</span>
                         <span class="tech-tag">FastAPI</span>
                         <span class="tech-tag">TensorFlow</span>
                     </div>
+                    <div class="price-tag">From $499</div>
                 </div>
-                <div class="feature-item reveal-right">
+                <div class="feature-item reveal-left">
                     <i class="fab fa-js"></i>
                     <h3>JavaScript Full-Stack</h3>
-                    <p>React, Node.js, TypeScript, Vue.js, and modern frontend frameworks.</p>
+                    <p>React, Node.js, TypeScript, Vue.js ecosystems.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">TypeScript</span>
                     </div>
+                    <div class="price-tag">From $399</div>
                 </div>
                 <div class="feature-item reveal-right">
                     <i class="fab fa-golang"></i>
                     <h3>Go Development</h3>
-                    <p>High-performance microservices, APIs, and concurrent systems.</p>
+                    <p>High-performance microservices and concurrent systems.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Gin</span>
                         <span class="tech-tag">gRPC</span>
                         <span class="tech-tag">Docker</span>
                     </div>
+                    <div class="price-tag">From $699</div>
                 </div>
                 <div class="feature-item reveal-left">
                     <i class="fab fa-rust"></i>
                     <h3>Rust Systems</h3>
-                    <p>Performance-critical applications, WebAssembly, and system programming.</p>
+                    <p>Performance-critical apps, WebAssembly, system programming.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Actix</span>
                         <span class="tech-tag">Tokio</span>
                         <span class="tech-tag">WASM</span>
                     </div>
+                    <div class="price-tag">From $899</div>
                 </div>
                 <div class="feature-item reveal-right">
                     <i class="fab fa-php"></i>
                     <h3>PHP & Laravel</h3>
-                    <p>Web applications, CMS development, and API integrations.</p>
+                    <p>Web applications, CMS development, API integrations.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">Laravel</span>
                         <span class="tech-tag">Symfony</span>
                         <span class="tech-tag">MySQL</span>
                     </div>
+                    <div class="price-tag">From $349</div>
                 </div>
             </div>
         </section>
@@ -170,8 +181,9 @@
         <!-- MOBILE & GAME DEVELOPMENT -->
         <section class="glass-card reveal">
             <h2 class="section-title">Mobile & Game Development</h2>
-            <div class="pricing-grid">
+            <div class="pricing-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
                 <div class="pricing-card reveal-left">
+                    <i class="fas fa-mobile-alt" style="font-size: 2.5rem; color: var(--primary); margin-bottom: 16px;"></i>
                     <div class="tier-label">Mobile Apps</div>
                     <div class="price">From <span>$599</span></div>
                     <p class="price-desc">Native & cross-platform mobile applications</p>
@@ -185,6 +197,7 @@
                     <a href="index.html#contact" class="secondary-btn">Build Mobile App</a>
                 </div>
                 <div class="pricing-card reveal-right">
+                    <i class="fas fa-gamepad" style="font-size: 2.5rem; color: var(--secondary); margin-bottom: 16px;"></i>
                     <div class="tier-label">Game Development</div>
                     <div class="price">From <span>$799</span></div>
                     <p class="price-desc">Unity, Unreal Engine, and custom game engines</p>
@@ -200,7 +213,7 @@
             </div>
         </section>
 
-        <!-- ADD-ON SERVICES -->
+        <!-- ADDITIONAL PURCHASE OPTIONS -->
         <section class="glass-card reveal">
             <h2 class="section-title">Add-On Services</h2>
             <div class="features-grid">
@@ -210,13 +223,13 @@
                     <p>Design and optimize database schemas for maximum performance and scalability.</p>
                     <div class="price-tag">Starting at $199</div>
                 </div>
-                <div class="feature-item reveal-left">
+                <div class="feature-item reveal-right">
                     <i class="fas fa-cloud"></i>
                     <h3>Cloud Migration</h3>
                     <p>Seamless migration to cloud platforms with zero downtime.</p>
                     <div class="price-tag">Starting at $499</div>
                 </div>
-                <div class="feature-item reveal-right">
+                <div class="feature-item reveal-left">
                     <i class="fas fa-shield-alt"></i>
                     <h3>Security Audit</h3>
                     <p>Comprehensive security analysis and vulnerability assessment.</p>
@@ -231,55 +244,100 @@
             </div>
         </section>
 
+        <!-- ONE-TIME SERVICES -->
+        <section class="glass-card reveal">
+            <h2 class="section-title">One-Time Services</h2>
+            <p class="section-intro">Need a quick fix or a specific task? Book individual services without a full project.</p>
+            <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-bug"></i>
+                    <h3>Bug Fix Session</h3>
+                    <p>Get a critical bug fixed within 24 hours by our senior engineers.</p>
+                    <div class="price-tag">From $99</div>
+                    <a href="index.html#contact" class="secondary-btn" style="margin-top: 12px; font-size: 0.85rem;">Book Now</a>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-search"></i>
+                    <h3>Code Review</h3>
+                    <p>Professional code review with actionable improvement suggestions.</p>
+                    <div class="price-tag">From $149</div>
+                    <a href="index.html#contact" class="secondary-btn" style="margin-top: 12px; font-size: 0.85rem;">Book Now</a>
+                </div>
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-comments"></i>
+                    <h3>Consultation Call</h3>
+                    <p>1-hour technical consultation with our senior architect.</p>
+                    <div class="price-tag">From $79</div>
+                    <a href="tel:+4917623252817" class="secondary-btn" style="margin-top: 12px; font-size: 0.85rem;">Call Now</a>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h3>Architecture Design</h3>
+                    <p>System architecture blueprint and technical documentation.</p>
+                    <div class="price-tag">From $399</div>
+                    <a href="index.html#contact" class="secondary-btn" style="margin-top: 12px; font-size: 0.85rem;">Book Now</a>
+                </div>
+                <div class="feature-item reveal-left">
+                    <i class="fas fa-cogs"></i>
+                    <h3>DevOps Setup</h3>
+                    <p>CI/CD pipeline, Docker, and deployment automation setup.</p>
+                    <div class="price-tag">From $299</div>
+                    <a href="index.html#contact" class="secondary-btn" style="margin-top: 12px; font-size: 0.85rem;">Book Now</a>
+                </div>
+                <div class="feature-item reveal-right">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>App Store Submission</h3>
+                    <p>Full App Store / Play Store submission handling and optimization.</p>
+                    <div class="price-tag">From $149</div>
+                    <a href="index.html#contact" class="secondary-btn" style="margin-top: 12px; font-size: 0.85rem;">Book Now</a>
+                </div>
+            </div>
+        </section>
+
         <!-- CUSTOM ENTERPRISE -->
-        <section class="glass-card reveal" style="text-align: center; border-left: 4px solid var(--primary);">
+        <section class="glass-card reveal" style="text-align: center; border-left: 3px solid var(--primary);">
             <h2 class="section-title">Need Custom Enterprise Solutions?</h2>
             <p class="section-intro">Complex integrations, legacy system modernization, or specialized requirements? Let's discuss your unique needs.</p>
             <div class="cta-wrapper">
                 <a href="index.html#contact" class="submit-btn animate-glow">Schedule Consultation</a>
-                <a href="support.html" class="secondary-btn">Talk to Expert</a>
+                <a href="tel:+4917623252817" class="secondary-btn"><i class="fas fa-phone"></i> Call Us</a>
             </div>
         </section>
 
         <!-- FOOTER -->
         <footer>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
+            <div class="footer-grid">
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px;">Snufi Coding</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.6;">Premium Software Engineering & Cloud Solutions based in Germany.</p>
+                    <h3>Snufi Coding</h3>
+                    <p>Premium Software Engineering & Cloud Solutions based in Germany.</p>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px;">Quick Links</h3>
-                    <ul style="list-style: none; opacity: 0.6; font-size: 0.9rem; line-height: 2;">
-                        <li><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
-                        <li><a href="pricing.html" style="color: inherit; text-decoration: none;">Pricing</a></li>
-                        <li><a href="support.html" style="color: inherit; text-decoration: none;">Support</a></li>
-                        <li><a href="terms.html" style="color: inherit; text-decoration: none;">Terms</a></li>
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="terms.html">Terms</a></li>
                     </ul>
                 </div>
-                <div style="margin-top: 15px; font-size: 1.5rem; display: flex; gap: 20px;">
-                    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
-                        <i class="fab fa-discord"></i>
-                    </a>
+                <div>
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/itzsnufi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="tel:+4917623252817" aria-label="Phone"><i class="fas fa-phone"></i></a>
+                    </div>
                 </div>
             </div>
 
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
-            
-            <p>&copy; 2026 Snufi Coding | Germany</p>
-            <p style="margin-top: 10px;">
-                <a href="https://itzsnufi.github.io/web-impressum" target="_blank" style="color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.8rem;">Imprint / Legal Notice</a>
+            <hr>
+            <p class="copyright">&copy; 2026 Snufi Coding | Germany</p>
+            <p class="footer-legal" style="opacity: 1; margin-top: 10px;">
+                <a href="impressum.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem;">Legal Notice</a>
             </p>
         </footer>
     </div>
 
-    <!-- SCRIPTS -->
     <script src="script.js"></script>
 </body>
 </html>

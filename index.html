@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Snufi Coding - Enterprise Software Engineering. We build scalable, secure, and high-performance applications for ambitious businesses.">
+    <meta name="theme-color" content="#06080d">
     <title>Snufi Coding | Enterprise Software Engineering</title>
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <!-- NAVIGATION -->
-    <div class="menu-btn" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+    <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation"><span></span><span></span><span></span></div>
     
     <!-- THEME TOGGLE -->
-    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()">
+    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
         <div class="theme-toggle-slider"></div>
     </div>
     
@@ -24,14 +30,16 @@
             <li><a href="support.html"><i class="fas fa-headset"></i> Support Hub</a></li>
             <li><a href="terms.html"><i class="fas fa-file-contract"></i> Terms</a></li>
             <li><a href="impressum.html"><i class="fas fa-info-circle"></i> Legal Notice</a></li>
-            <li><hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 10px 0;"></li>
-            <li><a href="#contact" onclick="toggleMenu()" style="color: var(--primary);"><i class="fas fa-rocket"></i> Start Project</a></li>
+            <li><hr></li>
+            <li><a href="#contact" onclick="toggleMenu()"><i class="fas fa-rocket"></i> Start Project</a></li>
         </ul>
     </nav>
 
-    <!-- ANIMATED BACKGROUND -->
-    <div class="area"><ul class="circles"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ul></div>
-    <div class="particles" id="particles"></div>
+    <!-- ANIMATED BACKGROUND (GPU-accelerated CSS only) -->
+    <div class="bg-mesh"></div>
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
     
     <!-- LOADING OVERLAY -->
     <div class="loading-overlay" id="loadingOverlay">
@@ -60,20 +68,20 @@
                 <h2 class="section-title">Trusted by Industry Leaders</h2>
                 <div class="features-grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); text-align: center;">
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">99.9%</h2>
-                        <p style="font-size: 0.8rem; opacity: 0.7;">Uptime SLA</p>
+                        <h2>99.9%</h2>
+                        <p>Uptime SLA</p>
                     </div>
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">24/7</h2>
-                        <p style="font-size: 0.8rem; opacity: 0.7;">Expert Support</p>
+                        <h2>24/7</h2>
+                        <p>Expert Support</p>
                     </div>
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">15+</h2>
-                        <p style="font-size: 0.8rem; opacity: 0.7;">Tech Stacks</p>
+                        <h2>15+</h2>
+                        <p>Tech Stacks</p>
                     </div>
                     <div class="stat-item">
-                        <h2 style="color: var(--primary); font-size: 2.5rem;" class="animate-pulse">Zero</h2>
-                        <p style="font-size: 0.8rem; opacity: 0.7;">Security Breaches</p>
+                        <h2>Zero</h2>
+                        <p>Security Breaches</p>
                     </div>
                 </div>
             </section>
@@ -109,7 +117,7 @@
             <section class="glass-card reveal">
                 <h2 class="section-title">The Technical Ecosystem</h2>
                 <div class="tech-group">
-                    <h3 style="color:var(--primary); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px;">CORE LANGUAGES & SYSTEMS</h3>
+                    <h3>CORE LANGUAGES & SYSTEMS</h3>
                     <div class="skills-grid">
                         <div class="skill-item reveal-left"><i class="fab fa-java"></i> Java / Spring Ecosystem</div>
                         <div class="skill-item reveal-left"><i class="fab fa-python"></i> Python / Data Science</div>
@@ -119,8 +127,8 @@
                         <div class="skill-item reveal-right"><i class="fas fa-database"></i> PostgreSQL / Redis</div>
                     </div>
                 </div>
-                <div class="tech-group" style="margin-top: 40px;">
-                    <h3 style="color:var(--primary); font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px;">MODERN FRONTEND ARCHITECTURE</h3>
+                <div class="tech-group">
+                    <h3>MODERN FRONTEND ARCHITECTURE</h3>
                     <div class="skills-grid">
                         <div class="skill-item reveal-left"><i class="fab fa-react"></i> React / Next.js</div>
                         <div class="skill-item reveal-left"><i class="fab fa-vuejs"></i> Vue.js / Nuxt</div>
@@ -180,9 +188,9 @@
             </section>
 
             <!-- SECURITY & COMPLIANCE -->
-            <section class="glass-card reveal" style="border-left: 4px solid #10b981;">
+            <section class="glass-card reveal" style="border-left: 3px solid #10b981;">
                 <h2 class="section-title"><i class="fas fa-user-shield"></i> Security First</h2>
-                <p>All our projects follow the <strong>OWASP Top 10</strong> security guidelines. We implement end-to-end encryption, multi-factor authentication, and regular automated security patches for every deployment.</p>
+                <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto;">All our projects follow the <strong style="color: var(--text);">OWASP Top 10</strong> security guidelines. We implement end-to-end encryption, multi-factor authentication, and regular automated security patches for every deployment.</p>
             </section>
 
             <!-- FAQ SECTION -->
@@ -220,10 +228,39 @@
                     <div class="form-group-row">
                         <input type="text" name="company" placeholder="Company Name" class="reveal-left">
                         <input type="text" name="budget" placeholder="Approx. Budget (Optional)" class="reveal-right">
-                        <input type="text" name="Code" placeholder="If you have a promo code or a referral code, write it in here (Optional)" class="reveal-left">
-                        <input type="text" name="Service" placeholder="Type your desired service here, e.g., Web Service" class="reveal-right">
                     </div>
-                    <textarea name="message" placeholder="Please provide details about your project, current challenges, and desired launch date..." rows="6" required class="reveal"></textarea>
+                    <div class="form-group-row">
+                        <select name="Service" required class="reveal-left service-select" id="serviceSelect">
+                            <option value="" disabled selected>Select Desired Service</option>
+                            <optgroup label="Web & Software">
+                                <option value="Full-Stack Development">Full-Stack Development</option>
+                                <option value="React / Next.js Frontend">React / Next.js Frontend</option>
+                                <option value="Java Enterprise (Spring Boot)">Java Enterprise (Spring Boot)</option>
+                                <option value="Python Solutions (Django/FastAPI)">Python Solutions (Django/FastAPI)</option>
+                                <option value="Go Development">Go Development</option>
+                                <option value="Rust Systems">Rust Systems</option>
+                                <option value="PHP & Laravel">PHP & Laravel</option>
+                            </optgroup>
+                            <optgroup label="Data & Cloud">
+                                <option value="Big Data & Analytics">Big Data & Analytics</option>
+                                <option value="API Design & Integration">API Design & Integration</option>
+                                <option value="Cloud Migration">Cloud Migration</option>
+                                <option value="Managed Cloud Hosting">Managed Cloud Hosting</option>
+                                <option value="Database Architecture">Database Architecture</option>
+                            </optgroup>
+                            <optgroup label="Mobile & Game">
+                                <option value="Mobile App Development">Mobile App Development</option>
+                                <option value="Game Development">Game Development</option>
+                            </optgroup>
+                            <optgroup label="Security & Optimization">
+                                <option value="Security Audit">Security Audit</option>
+                                <option value="Performance Optimization">Performance Optimization</option>
+                            </optgroup>
+                            <option value="Other">Other (specify in message)</option>
+                        </select>
+                        <input type="text" name="Code" placeholder="Promo or Referral Code (Optional)" class="reveal-right">
+                    </div>
+                    <textarea name="message" placeholder="Tell us about your project — goals, challenges, timeline, and any specific requirements..." rows="6" required class="reveal"></textarea>
                     <button type="submit" class="submit-btn animate-glow">Submit Proposal Request</button>
                 </form>
             </section>
@@ -231,62 +268,59 @@
 
         <!-- FOOTER -->
         <footer>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: left; margin-bottom: 40px;">
+            <div class="footer-grid">
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px;">Snufi Coding</h3>
-                    <p style="font-size: 0.9rem; opacity: 0.6;">Premium Software Engineering & Cloud Solutions based in Germany.</p>
+                    <h3>Snufi Coding</h3>
+                    <p>Premium Software Engineering & Cloud Solutions based in Germany.</p>
                 </div>
                 <div>
-                    <h3 style="color: white; margin-bottom: 20px;">Navigation</h3>
-                    <ul style="list-style: none; opacity: 0.6; font-size: 0.9rem; line-height: 2;">
-                        <li><a href="index.html" style="color: inherit; text-decoration: none;">Home</a></li>
-                        <li><a href="pricing.html" style="color: inherit; text-decoration: none;">Pricing</a></li>
-                        <li><a href="support.html" style="color: inherit; text-decoration: none;">Support</a></li>
-                        <li><a href="terms.html" style="color: inherit; text-decoration: none;">Terms of Service</a></li>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="support.html">Support</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
                 </div>
-                <div style="margin-top: 15px; font-size: 1.5rem; display: flex; gap: 20px;">
-                <!-- GitHub -->
-    <a href="https://github.com/itzsnufi" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
-        <i class="fab fa-github"></i>
-    </a>
-    
-    <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
-        <i class="fab fa-linkedin"></i>
-    </a>
-    
-    <!-- Discord -->
-    <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" style="color: var(--primary); text-decoration: none;" class="social-link">
-        <i class="fab fa-discord"></i>
-    </a>
-</div>
-
-            <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
-            
-            <p>&copy; 2026 Snufi Coding | Germany</p>
-            <p style="margin-top: 10px;">
-                <!-- Removed imprint link as we have dedicated Legal Notice page -->
-            </p>
-            
-            <!-- Page Visit Counter -->
-            <div style="margin-top: 30px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                <span style="font-size: 0.7rem; color: #9ca3af; text-transform: uppercase;">Live Traffic:</span>
-                <div style="background: #1f2937; color: #10b981; padding: 4px 10px; border-radius: 4px; font-family: monospace; border: 1px solid #374151;">
-                    <img src="https://count.getloli.com/get/@jan-lukas-sell-legal?theme=rule_734" alt="Count" style="vertical-align: middle; filter: hue-rotate(90deg);">
+                <div>
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/itzsnufi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://discord.gg/BYdf7BU8ZA" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
                 </div>
             </div>
-            <p style="font-size: 0.7rem; opacity: 0.3; margin-top: 20px;">All rights reserved. Managed Cloud Hosting & Dedicated Engineering Support.</p>
+
+            <hr>
+            
+            <p class="copyright">&copy; 2026 Snufi Coding | Germany</p>
+            
+            <!-- Page Visit Counter -->
+            <div class="footer-counter">
+                <span>Live Traffic:</span>
+                <div class="counter-badge">
+                    <img src="https://count.getloli.com/get/@jan-lukas-sell-legal?theme=rule_734" alt="Visitor Count" width="88" height="31" loading="lazy">
+                </div>
+            </div>
+            <p class="footer-legal">All rights reserved. Managed Cloud Hosting & Dedicated Engineering Support.</p>
         </footer>
     </div>
 
     <!-- MODAL -->
     <div class="modal-overlay" id="thanks-modal">
         <div class="modal-content">
-            <i class="fas fa-check-circle" style="font-size: 4rem; color: #10b981; margin-bottom: 20px;"></i>
-            <h2 style="color: var(--primary); margin-bottom: 15px;">Thank You!</h2>
-            <p style="color: var(--text-muted); margin-bottom: 20px;">Your project request has been successfully submitted. Our team will contact you within 24 hours with a detailed proposal.</p>
-            <button onclick="closeModal()" class="submit-btn">Got it!</button>
+            <div class="modal-icon-wrapper">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Form Submitted!</h2>
+            <p class="modal-subtitle">Your project request has been received.</p>
+            <p>Our engineering team will review your details and get back to you within <strong>24 hours</strong> with a custom technical proposal and fixed-price quote.</p>
+            <div class="modal-ticket">
+                <i class="fas fa-envelope-open-text"></i>
+                <span>Confirmation sent to your inbox</span>
+            </div>
+            <button onclick="closeModal()" class="submit-btn">Awesome, Got it!</button>
         </div>
     </div>
 
