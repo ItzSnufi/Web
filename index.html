@@ -13,12 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation"><span></span><span></span><span></span></div>
-    <div class="theme-toggle" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">
-        <div class="theme-toggle-slider"></div>
-    </div>
-    
-    <nav class="sidebar" id="sidebar">
+    <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation"><span></span><span></span><span></span></div><nav class="sidebar" id="sidebar">
         <ul class="nav-links">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
@@ -249,7 +244,7 @@
                     <div class="form-group-row">
                         <input type="text" name="Code" placeholder="Promo or Referral Code (Optional)" class="reveal-right">
                     </div>
-                    <textarea name="message" placeholder="Tell us about your project — goals, challenges, timeline, and any specific requirements..." rows="6" required class="reveal"></textarea>
+                    <textarea name="message" placeholder="Project details" rows="6" required class="reveal"></textarea>
                     <button type="submit" class="submit-btn animate-glow">Submit Proposal Request</button>
                 </form>
             </section>
