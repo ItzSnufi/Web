@@ -195,7 +195,14 @@ window.closeModal = function () {
         const target = $(href);
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          });
         }
       });
     });
@@ -451,6 +458,42 @@ window.closeModal = function () {
       });
     });
   }
+  function initLazyImages() {
+    if (!('IntersectionObserver' in window)) return;
+
+    const imageObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.classList.add('loaded');
+          imageObserver.unobserve(img);
+        }
+      });
+    }, { rootMargin: '100px' });
+
+    $$('img[loading="lazy"]').forEach((img) => {
+      imageObserver.observe(img);
+    });
+  }
+  function initSmoothHoverEffects() {
+    // Add smooth click feedback to all interactive elements
+    $$('button, a, .submit-btn, .secondary-btn, .menu-btn, .theme-toggle').forEach((el) => {
+      el.addEventListener('mousedown', function () {
+        this.style.transition = 'transform 0.1s ease';
+        this.style.transform = 'scale(0.97)';
+      });
+      el.addEventListener('mouseup', function () {
+        this.style.transform = '';
+        setTimeout(() => {
+          this.style.transition = '';
+        }, 300);
+      });
+      el.addEventListener('mouseleave', function () {
+        this.style.transform = '';
+        this.style.transition = '';
+      });
+    });
+  }
   document.addEventListener('DOMContentLoaded', () => {
     initLoadingScreen();
     initScrollReveal();
@@ -464,5 +507,7 @@ window.closeModal = function () {
     initTouchDevice();
     initPageTransitions();
     initSocialLinks();
+    initLazyImages();
+    initSmoothHoverEffects();
   });
 })();
