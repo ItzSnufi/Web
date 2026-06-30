@@ -10,6 +10,7 @@ window.toggleMenu = function () {
   const isOpen = sidebar.classList.contains('active');
   sidebar.classList.toggle('active');
   menuBtn.classList.toggle('active');
+  menuBtn.setAttribute('aria-expanded', !isOpen);
   document.body.style.overflow = isOpen ? '' : 'hidden';
 };
 
@@ -60,6 +61,7 @@ window.closeModal = function () {
       timer = setTimeout(() => fn.apply(this, args), ms);
     };
   }
+
   function initLoadingScreen() {
     const overlay = $('#loadingOverlay');
     if (!overlay) return;
@@ -67,13 +69,16 @@ window.closeModal = function () {
     const hide = () => {
       overlay.classList.add('hidden');
       setTimeout(() => {
-        overlay.style.display = 'none';
+        if (overlay.parentNode) {
+          overlay.style.display = 'none';
+        }
       }, 500);
     };
 
-    // Always hide quickly - don't block user interaction
-    setTimeout(hide, 400);
+    // Hide quickly for better UX
+    setTimeout(hide, 300);
   }
+
   function initScrollReveal() {
     const els = $$('.reveal, .reveal-left, .reveal-right');
     if (!els.length) return;
@@ -101,6 +106,7 @@ window.closeModal = function () {
 
     els.forEach((el) => observer.observe(el));
   }
+
   function initCounters() {
     const counters = $$('.stat-item h2');
     if (!counters.length) return;
@@ -145,6 +151,7 @@ window.closeModal = function () {
 
     requestAnimationFrame(update);
   }
+
   function initSidebar() {
     const menuBtn = $('.menu-btn');
     const sidebar = $('#sidebar');
@@ -153,6 +160,7 @@ window.closeModal = function () {
     function closeSidebar() {
       sidebar.classList.remove('active');
       menuBtn.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
       document.body.style.overflow = '';
     }
 
@@ -178,6 +186,7 @@ window.closeModal = function () {
       }
     });
   }
+
   function initTheme() {
     const saved = localStorage.getItem('snufi-theme') || 'dark';
     if (saved === 'light') {
@@ -186,6 +195,7 @@ window.closeModal = function () {
       if (toggle) toggle.classList.add('dark');
     }
   }
+
   function initSmoothScroll() {
     $$('a[href^="#"]').forEach((anchor) => {
       anchor.addEventListener('click', function (e) {
@@ -207,6 +217,7 @@ window.closeModal = function () {
       });
     });
   }
+
   function initContactForm() {
     const form = $('#mainForm');
     if (!form) return;
@@ -245,15 +256,14 @@ window.closeModal = function () {
       const data = {};
       formData.forEach((v, k) => { data[k] = v; });
 
-      // === Always show the success modal (100% reliable UX) ===
-      // Open the modal immediately so user always sees confirmation
+      // === Redirect to thank you page ===
       try {
-        openModal();
         spawnConfetti();
-        form.reset();
-        updateOtherRequestField();
+        setTimeout(() => {
+          window.location.href = 'thank-you.html';
+        }, 800);
       } catch (err) {
-        console.error('Modal error:', err);
+        console.error('Redirect error:', err);
       }
 
       // === Try to send the email via FormSubmit in the background ===
@@ -309,30 +319,25 @@ window.closeModal = function () {
       );
     });
   }
-  function openModal() {
-    const modal = $('#thanks-modal');
-    if (!modal) return;
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
 
-    // Auto-close
+  function showSuccessNotification() {
+    const notification = document.createElement('div');
+    notification.id = 'successNotification';
+    notification.style.cssText = 'position:fixed;top:24px;right:24px;background:rgba(16,185,129,0.95);color:#fff;padding:20px 24px;border-radius:10px;z-index:999999;box-shadow:0 8px 32px rgba(0,0,0,0.4);display:flex;align-items:center;gap:14px;max-width:420px;font-family:Space Grotesk,sans-serif;';
+    notification.innerHTML = '<i class="fas fa-check-circle" style="font-size:1.5rem;color:#fff;flex-shrink:0;"></i><div style="flex:1;"><div style="font-weight:700;margin-bottom:4px;font-size:1rem;">Form Submitted!</div><div style="font-size:0.9rem;opacity:0.9;">Your project request has been received. We\'ll get back to you within 24 hours.</div></div><button onclick="this.parentElement.remove()" style="background:none;border:none;color:#fff;cursor:pointer;font-size:1.5rem;padding:0;line-height:1;opacity:0.8;">&times;</button>';
+    
+    document.body.appendChild(notification);
+    
+    // Auto-remove after 5 seconds
     setTimeout(() => {
-      if (modal.classList.contains('active')) window.closeModal();
+      if (notification.parentNode) {
+        notification.style.opacity = '0';
+        notification.style.transition = 'opacity 0.4s ease';
+        setTimeout(() => notification.remove(), 400);
+      }
     }, 5000);
   }
 
-  // Close modal on backdrop click
-  document.addEventListener('click', (e) => {
-    if (e.target && e.target.id === 'thanks-modal') {
-      window.closeModal();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && $('#thanks-modal')?.classList.contains('active')) {
-      window.closeModal();
-    }
-  });
   function showProgressBar() {
     const bar = document.createElement('div');
     bar.className = 'progress-indicator';
@@ -345,6 +350,7 @@ window.closeModal = function () {
     const bar = $('#activeProgress');
     if (bar) bar.remove();
   }
+
   function showError(message) {
     const el = document.createElement('div');
     el.className = 'error-notification';
@@ -353,6 +359,7 @@ window.closeModal = function () {
     document.body.appendChild(el);
     setTimeout(() => el.remove(), 5000);
   }
+
   function spawnConfetti() {
     const colors = ['#00e5ff', '#6c3cff', '#10b981', '#f59e0b'];
     const fragment = document.createDocumentFragment();
@@ -374,6 +381,7 @@ window.closeModal = function () {
       $$('.confetti').forEach((c) => c.remove());
     }, 3500);
   }
+
   function createRipple(e, el) {
     const ripple = document.createElement('span');
     const rect = el.getBoundingClientRect();
@@ -386,6 +394,7 @@ window.closeModal = function () {
     el.appendChild(ripple);
     setTimeout(() => ripple.remove(), 600);
   }
+
   function initKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
       // Ctrl/Cmd + K = toggle menu
@@ -400,6 +409,7 @@ window.closeModal = function () {
       }
     });
   }
+
   function initParallax() {
     if (window.innerWidth < 768) return;
 
@@ -420,11 +430,13 @@ window.closeModal = function () {
       }, 16)
     );
   }
+
   function initTouchDevice() {
     if ('ontouchstart' in window || navigator.maxTouchPoints > 0) {
       document.body.classList.add('touch-device');
     }
   }
+
   function initPageTransitions() {
     const overlay = document.createElement('div');
     overlay.className = 'page-transition';
@@ -446,6 +458,7 @@ window.closeModal = function () {
       });
     });
   }
+
   function initSocialLinks() {
     $$('.social-link').forEach((link) => {
       link.addEventListener('mouseenter', () => {
@@ -458,6 +471,7 @@ window.closeModal = function () {
       });
     });
   }
+
   function initLazyImages() {
     if (!('IntersectionObserver' in window)) return;
 
@@ -475,6 +489,7 @@ window.closeModal = function () {
       imageObserver.observe(img);
     });
   }
+
   function initSmoothHoverEffects() {
     // Add smooth click feedback to all interactive elements
     $$('button, a, .submit-btn, .secondary-btn, .menu-btn, .theme-toggle').forEach((el) => {
@@ -494,6 +509,31 @@ window.closeModal = function () {
       });
     });
   }
+
+  function initAccessibility() {
+    // Add keyboard support for theme toggle
+    const themeToggle = $('#themeToggle');
+    if (themeToggle) {
+      themeToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.toggleTheme();
+        }
+      });
+    }
+
+    // Add keyboard support for menu button
+    const menuBtn = $('.menu-btn');
+    if (menuBtn) {
+      menuBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.toggleMenu();
+        }
+      });
+    }
+  }
+
   document.addEventListener('DOMContentLoaded', () => {
     initLoadingScreen();
     initScrollReveal();
@@ -509,5 +549,6 @@ window.closeModal = function () {
     initSocialLinks();
     initLazyImages();
     initSmoothHoverEffects();
+    initAccessibility();
   });
 })();

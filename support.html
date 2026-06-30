@@ -11,9 +11,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-section { opacity: 1; }
+    </style>
 </head>
 <body>
-    <div class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation"><span></span><span></span><span></span></div><nav class="sidebar" id="sidebar">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle dark" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" role="button" tabindex="0">
+        <div class="theme-toggle-slider"></div>
+    </div>
+
+    <!-- Menu Button -->
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar" id="sidebar" aria-label="Main navigation">
         <ul class="nav-links">
             <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="pricing.html"><i class="fas fa-tags"></i> Pricing</a></li>
@@ -39,7 +55,7 @@
         </header>
         <div class="pricing-grid">
             <div class="pricing-card reveal-left">
-                <i class="fas fa-phone-alt" style="font-size: 3rem; color: #10b981; margin-bottom: 20px;"></i>
+                <i class="fas fa-phone-alt"></i>
                 <h3>Phone Support</h3>
                 <p class="price-desc">Direct phone line for immediate assistance and urgent inquiries.</p>
                 <ul class="price-features">
@@ -48,13 +64,13 @@
                     <li><i class="fas fa-check"></i> Instant Response</li>
                     <li><i class="fas fa-check"></i> Multilingual Support</li>
                 </ul>
-                <a href="tel:+4917623252817" class="submit-btn" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 20px rgba(16,185,129,0.25);">
+                <a href="tel:+4917623252817" class="submit-btn">
                     <i class="fas fa-phone"></i> +49 (0) 176 23252817
                 </a>
             </div>
 
             <div class="pricing-card reveal-right">
-                <i class="fas fa-envelope" style="font-size: 3rem; color: var(--primary); margin-bottom: 20px;"></i>
+                <i class="fas fa-envelope"></i>
                 <h3>Email Support</h3>
                 <p class="price-desc">For formal inquiries, business documentation, and detailed technical support.</p>
                 <ul class="price-features">
@@ -226,7 +242,7 @@
                 </details>
             </div>
         </section>
-        <section class="glass-card reveal" style="text-align: center; border-left: 3px solid var(--primary);">
+        <section class="glass-card reveal security-section">
             <h2 class="section-title">Still Need Help?</h2>
             <p class="section-intro">Can't find what you're looking for? Our team is ready to assist you with any questions or concerns.</p>
             <div class="cta-wrapper">
@@ -252,8 +268,8 @@
                 <div>
                     <h3>Connect</h3>
                     <div class="social-links">
-                        <a href="https://github.com/itzsnufi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/itzsnufi" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jan-lukas-snufi-5718943a3/?isSelfProfile=true" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="tel:+4917623252817" aria-label="Phone"><i class="fas fa-phone"></i></a>
                     </div>
                 </div>
@@ -261,8 +277,8 @@
 
             <hr>
             <p class="copyright">&copy; 2026 Snufi Coding | Germany</p>
-            <p class="footer-legal" style="opacity: 1; margin-top: 10px;">
-                <a href="impressum.html" style="color: var(--text-muted); text-decoration: none; font-size: 0.8rem;">Legal Notice</a>
+            <p class="footer-legal">
+                <a href="impressum.html">Legal Notice</a>
             </p>
         </footer>
     </div>
