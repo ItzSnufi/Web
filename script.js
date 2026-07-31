@@ -1,7 +1,4 @@
-/**
- * Snufi Coding - Premium Interactive Experience 2.0
- * Performance-optimized | GPU-accelerated | Accessible
- */
+
 window.toggleMenu = function () {
   const sidebar = document.getElementById('sidebar');
   const menuBtn = document.querySelector('.menu-btn');
@@ -75,7 +72,7 @@ window.closeModal = function () {
       }, 500);
     };
 
-    // Hide quickly for better UX
+    
     setTimeout(hide, 300);
   }
 
@@ -87,7 +84,7 @@ window.closeModal = function () {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Stagger animation for siblings
+            
             const parent = entry.target.parentElement;
             const siblings = $$('.reveal, .reveal-left, .reveal-right', parent);
             const index = siblings.indexOf(entry.target);
@@ -129,7 +126,7 @@ window.closeModal = function () {
 
   function animateValue(el) {
     const text = el.textContent.trim();
-    // Skip non-animatable values like "24/7", "Zero", etc.
+    
     if (/[\/]/.test(text) || isNaN(parseFloat(text.replace(/[^\d.]/g, '')))) return;
     const num = parseFloat(text.replace(/[^\d.]/g, ''));
     if (isNaN(num) || num === 0) return;
@@ -142,7 +139,6 @@ window.closeModal = function () {
     function update(now) {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease-out cubic
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = eased * num;
       el.textContent = current.toFixed(decimals) + suffix;
@@ -164,14 +160,14 @@ window.closeModal = function () {
       document.body.style.overflow = '';
     }
 
-    // Close on nav link click
+    
     $$('.nav-links a', sidebar).forEach((link) => {
       link.addEventListener('click', (e) => {
         closeSidebar();
       });
     });
 
-    // Close on scroll
+    
     window.addEventListener(
       'scroll',
       throttle(() => {
@@ -179,7 +175,7 @@ window.closeModal = function () {
       }, 200)
     );
 
-    // Close on Escape
+    
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && sidebar.classList.contains('active')) {
         closeSidebar();
@@ -245,18 +241,18 @@ window.closeModal = function () {
       e.preventDefault();
       if (!submitBtn) return;
 
-      // Loading state
+      
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
       submitBtn.disabled = true;
       submitBtn.classList.add('btn-loading');
       showProgressBar();
 
-      // Collect form data
+      
       const formData = new FormData(this);
       const data = {};
       formData.forEach((v, k) => { data[k] = v; });
 
-      // === Redirect to thank you page ===
+      
       try {
         spawnConfetti();
         setTimeout(() => {
@@ -266,21 +262,21 @@ window.closeModal = function () {
         console.error('Redirect error:', err);
       }
 
-      // === Try to send the email via FormSubmit in the background ===
+      
       try {
         const action = this.action || 'https://formsubmit.co/developersnufi@gmail.com';
         const url = action.includes('/ajax/')
           ? action
           : action.replace(/^https:\/\/formsubmit\.co\//, 'https://formsubmit.co/ajax/');
 
-        // Use sendBeacon if available (most reliable, no CORS)
+        
         if (navigator.sendBeacon) {
           const blob = new Blob([new URLSearchParams(formData).toString()], {
             type: 'application/x-www-form-urlencoded',
           });
           navigator.sendBeacon(url, blob);
         } else {
-          // Fallback: fetch with no-cors
+          
           fetch(url, {
             method: 'POST',
             body: formData,
@@ -291,7 +287,7 @@ window.closeModal = function () {
         console.warn('Background email send failed:', err);
       }
 
-      // Reset button after delay
+      
       setTimeout(() => {
         submitBtn.innerHTML = originalHTML;
         submitBtn.disabled = false;
@@ -300,7 +296,7 @@ window.closeModal = function () {
       }, 1200);
     });
 
-    // Real-time validation (debounced)
+    
     $$('input, textarea', form).forEach((input) => {
       input.addEventListener(
         'input',
@@ -328,7 +324,7 @@ window.closeModal = function () {
     
     document.body.appendChild(notification);
     
-    // Auto-remove after 5 seconds
+    
     setTimeout(() => {
       if (notification.parentNode) {
         notification.style.opacity = '0';
@@ -397,12 +393,12 @@ window.closeModal = function () {
 
   function initKeyboardShortcuts() {
     document.addEventListener('keydown', (e) => {
-      // Ctrl/Cmd + K = toggle menu
+      
       if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
         e.preventDefault();
         if (typeof window.toggleMenu === 'function') window.toggleMenu();
       }
-      // Ctrl/Cmd + D = toggle theme
+      
       if ((e.ctrlKey || e.metaKey) && e.key === 'd') {
         e.preventDefault();
         if (typeof window.toggleTheme === 'function') window.toggleTheme();
@@ -446,7 +442,7 @@ window.closeModal = function () {
 
     $$('a[href$=".html"]:not([target])').forEach((link) => {
       link.addEventListener('click', (e) => {
-        // Skip if modifier key held
+        
         if (e.ctrlKey || e.metaKey || e.shiftKey) return;
 
         e.preventDefault();
@@ -491,7 +487,7 @@ window.closeModal = function () {
   }
 
   function initSmoothHoverEffects() {
-    // Add smooth click feedback to all interactive elements
+    
     $$('button, a, .submit-btn, .secondary-btn, .menu-btn, .theme-toggle').forEach((el) => {
       el.addEventListener('mousedown', function () {
         this.style.transition = 'transform 0.1s ease';
@@ -511,7 +507,7 @@ window.closeModal = function () {
   }
 
   function initAccessibility() {
-    // Add keyboard support for theme toggle
+    
     const themeToggle = $('#themeToggle');
     if (themeToggle) {
       themeToggle.addEventListener('keydown', (e) => {
@@ -522,7 +518,7 @@ window.closeModal = function () {
       });
     }
 
-    // Add keyboard support for menu button
+    
     const menuBtn = $('.menu-btn');
     if (menuBtn) {
       menuBtn.addEventListener('keydown', (e) => {
